@@ -22,3 +22,6 @@ section.boxes {
 }
 
 
+.boxes-button {
+    width: 100% !important;
+}
