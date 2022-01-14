@@ -22,6 +22,29 @@ section.boxes {
 }
 
 
-.boxes-button {
+.is-box {
     width: 100% !important;
+    height: 100px;
+    background-color: burlywood !important;
+    /* background-image: url('../img/cartoon.jpg'); */
+    margin: 15px 10px 0px 10px;
+}
+
+.is-wall {
+    background-color: darkgrey !important;
+    width: 10px !important;
+}
+
+.is-shelf {
+    display: flex;
+    padding: 10px 10px 10px 10px;
+}
+
+.is-overlap {
+    background-color: darkgrey;
+    height: 20px;
+}
+
+.is-main-container {
+    padding: 0 0 0 0;
 }
