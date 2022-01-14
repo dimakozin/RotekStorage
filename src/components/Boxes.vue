@@ -9,15 +9,18 @@
               <div class="is-overlap"></div>
       
               <div class="is-shelf">
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       1
                   </button>
                   
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       2
                   </button>
 
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       3
                   </button>    
               </div>
@@ -25,15 +28,18 @@
               <div class="is-overlap"></div>
       
               <div class="is-shelf">
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       4
                   </button>
                   
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       5
                   </button>
 
-                  <button class="button is-primary is-large modal-button is-box">
+                  <button class="button is-primary is-large modal-button is-box"
+                  @click="isModalOpen=true">
                       6
                   </button>    
               </div>
@@ -45,6 +51,24 @@
           <div class="column is-1 is-wall"></div>
           <div class="column is-1"></div>
         </div>
+
+        <div class="modal" v-bind:class="[isModalOpen ? 'is-active' : '' ]">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" aria-label="close" @click="isModalOpen=false"></button>
+            </header>
+            <section class="modal-card-body">
+                Some text
+            </section>
+            <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button">Cancel</button>
+            </footer>
+        </div>
+        </div>
+
     </section>
 </template>
 
@@ -52,9 +76,11 @@
 import { Options, Vue } from 'vue-class-component';
 
 @Options({
-  props: {
-    msg: String
-  }
+  data() {
+      return {
+          isModalOpen: false
+      }
+  },
 })
 
 export default class Boxes extends Vue {
