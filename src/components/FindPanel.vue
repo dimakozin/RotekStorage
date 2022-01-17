@@ -5,25 +5,7 @@
         Расположение объектов на складе
       </p>
       <p class="title">
-        <p class="control">
-          <div class="dropdown is-active dropdown-block">
-            <div class="dropdown-trigger">
-                <div class="field">
-                    <p class="control is-expanded has-icons-right">
-                        <input class="input" type="search" placeholder="Введите объект поиска"/>
-                    </p>
-                </div>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                    <a href="#" class="dropdown-item">Молоток</a>
-                    <a href="#" class="dropdown-item">ПЛК</a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item">Панель оператора Weintek</a>
-                </div>
-            </div>
-          </div>
-        </p>
+        <find-menu></find-menu>
       </p>
     </div>
   </section>
@@ -31,10 +13,12 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import FindMenu from './FindMenu.vue';
 
 @Options({
+  components: { FindMenu },
   props: {
-    msg: String
+
   }
 })
 
