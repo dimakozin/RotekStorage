@@ -4,8 +4,6 @@
        <p class="menu-label">
           Список
         </p>
-
-        <ul class="menu-list">
           <li>
             <a class="is-active">А</a>
             <ul>
@@ -26,15 +24,21 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import {mapGetters} from 'vuex'
 
 @Options({
   props: {
-    msg: String
-  }
+    
+  },
+  computed: {
+      ...mapGetters({
+          getAllSorted: 'GET_ALL_SORTED_BY_NAME'
+      }),
+   },
 })
 
 export default class LeftMenu extends Vue {
-  msg!: string
+  
 }
 
 </script>
