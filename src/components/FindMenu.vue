@@ -35,7 +35,7 @@ import {mapGetters} from 'vuex'
   },
   computed: {
       ...mapGetters({
-          findByName: 'FIND_BY_NAME'
+          findByName: 'GET_BY_NAME'
       })
    },
 

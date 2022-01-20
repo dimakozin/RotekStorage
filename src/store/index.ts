@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    showModal: false,
     subjects: [
       {
         id: 1,
@@ -17,36 +18,64 @@ export default createStore({
         id: 3,
         title: 'Панель оператора Weintek',
         boxId: 2
+      },
+      {
+        id: 4,
+        title: "Авторучка",
+        boxId: 3
       }
     ]
   },
   mutations: {
+    showModal (state) {
+      state.showModal = true
+    },
+    closeModal (state) {
+      state.showModal = false
+    }
   },
   actions: {
+    showModal(context) {
+      context.commit('showModal')
+    },
+    closeModal(context) {
+      context.commit('closeModal')
+    }
   },
   modules: {
   },
   getters: {
     GET_ALL_SUBJECTS: state => state.subjects,
-    FIND_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title.includes(name)),
+    GET_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title.includes(name)),
     GET_ALL_SORTED_BY_NAME: (state) => {
-      interface ISorted {
-        [first_char: string] : Array<string>
+
+      interface ISortedObject {
+        char: string,
+        items: Array<string>
       }
-      let sorted = {} as ISorted
-      state.subjects.forEach(subject => {
-        let first_char = subject.title[0]
-          if(first_char in sorted){
-            sorted[first_char].push(subject.title)
-          } else {
-            sorted[first_char] = [ subject.title ]
+        let result = [] as Array<ISortedObject>
+        state.subjects.forEach(subject => {
+          let firstChar = subject.title[0]
+          let findByChar = result.find(item => item.char === firstChar)
+
+          if(!!findByChar){
+            findByChar!.items.push(subject.title)
           }
-
-          console.log(sorted)
-
-          return sorted
-
-      })
-    }
+          else {
+            result.push({
+              char: firstChar,
+              items: [ subject.title ]
+            })
+          }
+        })
+        return result.sort( (a,b) => {
+          if(a.char > b.char) return 1
+          else if(a.char == b.char) return 0
+          else return -1
+        })},
+    GET_BY_BOX: (state) => (boxId: number) => state.subjects.filter(subject => subject.boxId === boxId),
+    GET_MODAL_STATE: (state) => state.showModal
+    
+  },
   }
-})
+)

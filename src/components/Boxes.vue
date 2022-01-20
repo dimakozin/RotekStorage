@@ -10,17 +10,17 @@
       
               <div class="is-shelf">
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(1)">
                       1
                   </button>
                   
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(2)">
                       2
                   </button>
 
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(3)">
                       3
                   </button>    
               </div>
@@ -29,17 +29,17 @@
       
               <div class="is-shelf">
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(4)">
                       4
                   </button>
                   
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(5)">
                       5
                   </button>
 
                   <button class="button is-primary is-large modal-button is-box"
-                  @click="isModalOpen=true">
+                  @click="showBoxModal(6)">
                       6
                   </button>    
               </div>
@@ -52,39 +52,40 @@
           <div class="column is-1"></div>
         </div>
 
-        <div class="modal" v-bind:class="[isModalOpen ? 'is-active' : '' ]">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button class="delete" aria-label="close" @click="isModalOpen=false"></button>
-            </header>
-            <section class="modal-card-body">
-                Some text
-            </section>
-            <footer class="modal-card-foot">
-            <button class="button is-success">Save changes</button>
-            <button class="button">Cancel</button>
-            </footer>
-        </div>
-        </div>
+        <box-modal
+        :boxId=boxId
+        :items=items   
+        />
 
     </section>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import BoxModal from '@/components/BoxModal.vue'
+import {mapActions} from 'vuex'
 
 @Options({
   data() {
       return {
-          isModalOpen: false
+        boxId: 1,
+        items: []
       }
   },
+  methods: {
+      ...mapActions({
+          showModal: 'showModal',
+      }),
+      showBoxModal (boxId: number) {
+        this.boxId = boxId
+        this.showModal()
+      }
+  },
+  components: {BoxModal}
 })
 
 export default class Boxes extends Vue {
-  msg!: string
+  
 }
 
 </script>
