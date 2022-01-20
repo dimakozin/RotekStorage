@@ -57,8 +57,8 @@ export default createStore({
   },
   getters: {
     GET_ALL_SUBJECTS: state => state.subjects,
-    GET_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title.toLowerCase()
-    .includes(name.toLowerCase()))
+    GET_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title?.toLowerCase()
+    .includes(name?.toLowerCase()))
     .map(item => item.title)
     .filter((value, index, self) => self.indexOf(value) === index),
     GET_ALL_UNIQUE_SORTED_BY_NAME: (state) => {
