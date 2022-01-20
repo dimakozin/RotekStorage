@@ -11,11 +11,10 @@
             <div class="dropdown-menu" id="dropdown-menu" role="menu" 
             v-if="findByName(subjectTitle).length !== 0 && subjectTitle != ''">
                 <div class="dropdown-content">
-                    <a class="dropdown-item" v-for="subject in findByName(subjectTitle)"
-                     v-bind:key="subject.title">
-                        {{subject.title}}
+                    <a class="dropdown-item" v-for="title in findByName(subjectTitle)"
+                     v-bind:key="title">
+                        {{title}}
                     </a>
-                    <hr class="dropdown-divider">
                 </div>
             </div>
           </div>
