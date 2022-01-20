@@ -91,7 +91,13 @@ export default createStore({
     GET_BY_BOX: (state) => (boxId: number) => state.subjects.filter(subject => subject.boxId === boxId),
     GET_MODAL_STATE: (state) => state.showModal,
     GET_ACTIVE_MENU_PARAMS: (state) => { return {char: state.leftMenu.activeChar, item: state.leftMenu.activeItem}},
-    
+    GET_ACTIVE_BOXES: (state) => {
+      let result = [] as Array<number>
+      state.subjects.forEach( (el) => {
+        if(el.title == state.leftMenu.activeItem) result.push(el.boxId)
+      })
+      return result
+    },
   },
   }
 )

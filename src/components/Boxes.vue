@@ -10,16 +10,19 @@
       
               <div class="is-shelf">
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(1)}"
                   @click="showBoxModal(1)">
                       1
                   </button>
                   
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(2)}"
                   @click="showBoxModal(2)">
                       2
                   </button>
 
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(3)}"
                   @click="showBoxModal(3)">
                       3
                   </button>    
@@ -29,16 +32,19 @@
       
               <div class="is-shelf">
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(4)}"
                   @click="showBoxModal(4)">
                       4
                   </button>
                   
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(5)}"
                   @click="showBoxModal(5)">
                       5
                   </button>
 
                   <button class="button is-primary is-large modal-button is-box"
+                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(6)}"
                   @click="showBoxModal(6)">
                       6
                   </button>    
@@ -63,7 +69,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import BoxModal from '@/components/BoxModal.vue'
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 @Options({
   data() {
@@ -76,6 +82,7 @@ import {mapActions} from 'vuex'
       ...mapActions({
           showModal: 'showModal',
       }),
+      ...mapGetters(['GET_ACTIVE_BOXES']),
       showBoxModal (boxId: number) {
         this.boxId = boxId
         this.showModal()
@@ -102,6 +109,10 @@ export default class Boxes extends Vue {
     background-color: burlywood !important;
     /* background-image: url('../img/cartoon.jpg'); */
     margin: 15px 10px 0px 10px;
+}
+
+.is-active-box {
+    background-color: red !important;
 }
 
 .is-wall {
