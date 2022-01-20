@@ -7,8 +7,8 @@
             <button class="delete" aria-label="close" @click="close()"></button>
             </header>
             <section class="modal-card-body">
-                <p v-for="item in items" v-bind:key="item">
-                    {{item}}
+                <p v-for="item in GET_BY_BOX(boxId)" v-bind:key="item">
+                    {{item.title}}
                 </p>
             </section>
             <footer class="modal-card-foot">
@@ -29,10 +29,6 @@ import {mapActions, mapGetters} from 'vuex'
             required: true,
             type: Number
         },
-        items: {
-            required: true,
-            type: Array
-        },
     },
     data () {
         return { }
@@ -46,7 +42,7 @@ import {mapActions, mapGetters} from 'vuex'
         }
     },
     computed: {
-        ...mapGetters(['GET_MODAL_STATE']),
+        ...mapGetters(['GET_MODAL_STATE', 'GET_BY_BOX']),
     }
 })
 
