@@ -4,12 +4,15 @@
             <p class="menu-label">
                 Алфавитный список
             </p>
-            <ul v-for="obj in getSorted()" v-bind:key="obj">
+            <ul v-for="obj in GET_ALL_UNIQUE_SORTED_BY_NAME()" v-bind:key="obj">
               <p class="menu-label">
                 {{obj.char}}
               </p>
               <ul class="menu-list" v-for="item in obj.items" v-bind:key="item">
-                <li><a class>{{item}}</a></li>
+                <li><a 
+                @click="setActive(obj.char, item)"
+                :class="{ 'is-active' : obj.char === GET_ACTIVE_MENU_PARAMS().char & item === GET_ACTIVE_MENU_PARAMS().item  }"
+                >{{item}}</a></li>
             </ul>
             </ul>
         </aside>
@@ -18,14 +21,20 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { mapGetters, mapActions } from 'vuex'
 
 @Options({
+    data () {
+      return {  }
+    },
     props: {
 
     },
     methods:{
-      getSorted() {
-        return this.$store.getters.GET_ALL_SORTED_BY_NAME
+      ...mapGetters(['GET_ALL_UNIQUE_SORTED_BY_NAME', 'GET_ACTIVE_MENU_PARAMS']),
+      ...mapActions(['setActiveElement']),
+      setActive (char:string, item: string) {
+        this.setActiveElement({char: char, item:item})
       }
     },
 })

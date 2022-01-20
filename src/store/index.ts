@@ -2,6 +2,10 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    leftMenu: {
+      activeChar: null,
+      activeItem: null
+    },
     showModal: false,
     subjects: [
       {
@@ -23,6 +27,11 @@ export default createStore({
         id: 4,
         title: "Авторучка",
         boxId: 3
+      },
+      {
+        id: 5,
+        title: 'ПЛК',
+        boxId: 1
       }
     ]
   },
@@ -32,22 +41,24 @@ export default createStore({
     },
     closeModal (state) {
       state.showModal = false
-    }
+    },
+    setActiveElement(state, element) {
+      state.leftMenu.activeChar = element.char
+      state.leftMenu.activeItem = element.item
+    },
+
   },
   actions: {
-    showModal(context) {
-      context.commit('showModal')
-    },
-    closeModal(context) {
-      context.commit('closeModal')
-    }
+    showModal: (context) => context.commit('showModal'),
+    closeModal: (context) => context.commit('closeModal'),
+    setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
   },
   modules: {
   },
   getters: {
     GET_ALL_SUBJECTS: state => state.subjects,
     GET_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title.toLowerCase().includes(name.toLowerCase())),
-    GET_ALL_SORTED_BY_NAME: (state) => {
+    GET_ALL_UNIQUE_SORTED_BY_NAME: (state) => {
 
       interface ISortedObject {
         char: string,
@@ -59,7 +70,11 @@ export default createStore({
           let findByChar = result.find(item => item.char === firstChar)
 
           if(!!findByChar){
-            findByChar!.items.push(subject.title)
+            // check unique
+            if(!findByChar!.items.some( title => title == subject.title)){
+              findByChar!.items.push(subject.title)
+            }
+
           }
           else {
             result.push({
@@ -74,7 +89,8 @@ export default createStore({
           else return -1
         })},
     GET_BY_BOX: (state) => (boxId: number) => state.subjects.filter(subject => subject.boxId === boxId),
-    GET_MODAL_STATE: (state) => state.showModal
+    GET_MODAL_STATE: (state) => state.showModal,
+    GET_ACTIVE_MENU_PARAMS: (state) => { return {char: state.leftMenu.activeChar, item: state.leftMenu.activeItem}},
     
   },
   }
