@@ -13,11 +13,20 @@ import { Options, Vue } from 'vue-class-component';
 import LeftMenu from '@/components/LeftMenu.vue'
 import FindPanel from '@/components/FindPanel.vue';
 import Boxes from '@/components/Boxes.vue';
+import {mapActions} from 'vuex'
 
 @Options({
   components: {
     LeftMenu, FindPanel, Boxes
   },
+  methods: {
+    ...mapActions(['dropActiveElement']),
+  },
+  mounted () {
+    window.addEventListener('keydown', (ev) => {
+      this.dropActiveElement()
+    })
+  }
 })
 
 export default class Home extends Vue {}

@@ -60,6 +60,10 @@ export default createStore({
         title: subject.title
       })
     },
+    dropActiveElement(state){
+      state.leftMenu.activeChar = null
+      state.leftMenu.activeItem = null
+    },
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -67,7 +71,8 @@ export default createStore({
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
     showLeftMenu: (context) => context.commit('showLeftMenu'),
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
-    addNewSubject: (context, payload) => context.commit('addNewSubject', payload) ,
+    addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
+    dropActiveElement: (context) => {context.commit('dropActiveElement')}
   },
   modules: {
   },
