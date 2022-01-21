@@ -1,5 +1,5 @@
 <template>
-    <div class="leftMenu column is-3"
+    <div class="leftMenu column is-4"
     :class="[ GET_LEFT_MENU_HIDDEN_STATUS() ? 'is-hidden-touch' : 'is-overlay' ]"
     >
       <aside class="menu">
