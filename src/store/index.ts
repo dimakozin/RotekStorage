@@ -52,8 +52,14 @@ export default createStore({
     },
     closeLeftMenu(state) {
       state.leftMenu.isHidden = true
-    }
-
+    },
+    addNewSubject(state, subject){ 
+      state.subjects.push({
+        id: 0,
+        boxId: subject.boxId,
+        title: subject.title
+      })
+    },
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -61,6 +67,7 @@ export default createStore({
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
     showLeftMenu: (context) => context.commit('showLeftMenu'),
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
+    addNewSubject: (context, payload) => context.commit('addNewSubject', payload) ,
   },
   modules: {
   },

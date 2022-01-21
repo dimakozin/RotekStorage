@@ -19,7 +19,7 @@
           </ul>
           <button class="button is-primary is-hidden-desktop"
           @click="closeLeftMenu()"
-          >Закрыть меню</button>
+          >Применить/закрыть меню</button>
       </aside>
     </div>
 </template>
