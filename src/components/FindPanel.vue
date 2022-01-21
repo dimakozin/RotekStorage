@@ -1,6 +1,11 @@
 <template>
   <section class="hero is-link">
     <div class="hero-body">
+      <div class="mobile-buttons is-hidden-desktop" id="docsToggles">
+        <button class="button is-primary"
+        @click="showLeftMenu()"
+        >Показать алфавитный список</button>
+      </div>
       <p class="title">
         Расположение объектов на складе
       </p>
@@ -14,16 +19,17 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import FindMenu from './FindMenu.vue';
+import {mapActions} from 'vuex'
 
 @Options({
   components: { FindMenu },
-  props: {
-
+  methods: {
+    ...mapActions(['showLeftMenu']),
   }
 })
 
 export default class FindPanel extends Vue {
-  msg!: string
+  
 }
 
 </script>

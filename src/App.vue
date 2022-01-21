@@ -1,9 +1,7 @@
 <template>
   <div class="columns">
-    <div class="column is-3">
-      <left-menu></left-menu>
-    </div>
-    <div class="column">
+    <left-menu></left-menu>    
+    <div class="column" style="padding: 0 0 0 0">
       <find-panel></find-panel> 
       <boxes></boxes>
     </div>
@@ -27,5 +25,5 @@ export default class Home extends Vue {}
 
 
 <style>
-@import "../public/bulma.min.css"
+  @import "../public/bulma.min.css"
 </style>

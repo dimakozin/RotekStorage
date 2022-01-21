@@ -4,7 +4,8 @@ export default createStore({
   state: {
     leftMenu: {
       activeChar: null,
-      activeItem: null
+      activeItem: null,
+      isHidden: true
     },
     showModal: false,
     subjects: [
@@ -46,12 +47,20 @@ export default createStore({
       state.leftMenu.activeChar = element.char
       state.leftMenu.activeItem = element.item
     },
+    showLeftMenu(state) {
+      state.leftMenu.isHidden = false
+    },
+    closeLeftMenu(state) {
+      state.leftMenu.isHidden = true
+    }
 
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
     closeModal: (context) => context.commit('closeModal'),
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
+    showLeftMenu: (context) => context.commit('showLeftMenu'),
+    closeLeftMenu: (context) => context.commit('closeLeftMenu'),
   },
   modules: {
   },
@@ -101,6 +110,7 @@ export default createStore({
       })
       return result
     },
+    GET_LEFT_MENU_HIDDEN_STATUS: (state) => state.leftMenu.isHidden
   },
   }
 )

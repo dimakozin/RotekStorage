@@ -2,7 +2,7 @@
       <section class="boxes">
         <div class="columns">
           <div class="column is-1"></div>
-            <div class="column is-1 is-wall"></div>
+            <div class="column is-1 is-wall is-hidden-mobile"></div>
               <div class="column is-main-container">
                           
               <div class="is-shelf"></div>
@@ -54,7 +54,7 @@
 
               <div class="is-shelf"></div>
             </div>
-          <div class="column is-1 is-wall"></div>
+          <div class="column is-1 is-wall is-hidden-mobile"></div>
           <div class="column is-1"></div>
         </div>
 
