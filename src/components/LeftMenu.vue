@@ -6,7 +6,7 @@
           <p class="menu-label">
               Алфавитный список
           </p>
-          <ul v-for="obj in GET_ALL_UNIQUE_SORTED_BY_NAME()" v-bind:key="obj">
+           <ul v-for="obj in GET_ALL_UNIQUE_SORTED_BY_NAME()" v-bind:key="obj">
             <p class="menu-label">
               {{obj.char}}
             </p>
@@ -40,7 +40,7 @@ import { mapGetters, mapActions } from 'vuex'
       ...mapActions(['setActiveElement', 'closeLeftMenu']),
       setActive (char:string, item: string) {
         this.setActiveElement({char: char, item:item})
-      }
+      },
     },
 })
 
@@ -54,5 +54,8 @@ export default class LeftMenu extends Vue {
   text-align: left
   background-color: white
   z-index: 2
+
+.menu
+  position: fixed
 
 </style>

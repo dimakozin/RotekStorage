@@ -1,67 +1,18 @@
 <template>
-      <section class="boxes">
-        <div class="columns">
-          <div class="column is-1"></div>
-            <div class="column is-1 is-wall is-hidden-mobile"></div>
-              <div class="column is-main-container">
-                          
-              <div class="is-shelf"></div>
-              <div class="is-overlap"></div>
-      
-              <div class="is-shelf">
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(1)}"
-                  @click="showBoxModal(1)">
-                      1
-                  </button>
-                  
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(2)}"
-                  @click="showBoxModal(2)">
-                      2
-                  </button>
-
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(3)}"
-                  @click="showBoxModal(3)">
-                      3
-                  </button>    
-              </div>
-      
-              <div class="is-overlap"></div>
-      
-              <div class="is-shelf">
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(4)}"
-                  @click="showBoxModal(4)">
-                      4
-                  </button>
-                  
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(5)}"
-                  @click="showBoxModal(5)">
-                      5
-                  </button>
-
-                  <button class="button is-primary is-large modal-button is-box"
-                  :class="{'is-active-box' : GET_ACTIVE_BOXES().includes(6)}"
-                  @click="showBoxModal(6)">
-                      6
-                  </button>    
-              </div>
-      
-              <div class="is-overlap"></div>
-
-              <div class="is-shelf"></div>
-            </div>
-          <div class="column is-1 is-wall is-hidden-mobile"></div>
-          <div class="column is-1"></div>
+      <section class="racks">
+        <div class="tabs is-centered">
+            <ul>
+                <router-link tag="li" to="/first">Первая секция</router-link>
+                <router-link tag="li" to="/second">Вторая секция</router-link>
+                <router-link tag="li" to="/third">Третья секция</router-link>
+                <router-link tag="li" to="/fourth">Четвертая секция</router-link>
+                <router-link tag="li" to="/fifth">Пятая секция</router-link>
+                <router-link tag="li" to="/second">Шестая секция</router-link>
+            </ul>
         </div>
-
-        <box-modal
-        :boxId=boxId
-        :items=items   
-        />
+        <div class="rack-view">
+            <router-view></router-view>
+        </div>
 
     </section>
 </template>
@@ -99,8 +50,9 @@ export default class Boxes extends Vue {
 
 <style lang="css">
 
-.boxes{
+.racks{
     padding-top: 25px;
+    padding-bottom: 15px;
 }
 
 .is-box {
@@ -116,8 +68,9 @@ export default class Boxes extends Vue {
 }
 
 .is-wall {
-    background-color: darkgrey !important;
+    background-color: rgb(63, 63, 224) !important;
     width: 10px !important;
+    margin-top: 120px
 }
 
 .is-shelf {
@@ -126,7 +79,7 @@ export default class Boxes extends Vue {
 }
 
 .is-overlap {
-    background-color: darkgrey;
+    background-color: rgb(175, 167, 167);
     height: 20px !important;
 }
 
