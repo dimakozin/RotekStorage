@@ -7,10 +7,13 @@
             <button class="delete" aria-label="close" @click="close()"></button>
             </header>
             <section class="modal-card-body">
-                <div class="control">
-                    <p v-for="item in GET_BY_BOX(boxId)" v-bind:key="item">
+                <div class="control is-box-item" v-for="item in GET_BY_BOX(boxId)" v-bind:key="item">
+                    <p>
                         {{item.title}}
                     </p>
+                    <button class="button is-small is-danger is-delete-button"
+                    @click="deleteElement(item)"
+                    >-</button>
                 </div>
             </section>
             <footer class="modal-card-foot">
@@ -49,7 +52,8 @@ import {mapActions, mapGetters} from 'vuex'
     methods:{
         ...mapActions({
             closeModal: 'closeModal',
-            addNewSubject: 'addNewSubject'
+            addNewSubject: 'addNewSubject',
+            deleteElement: 'deleteElement'
         }),
         close () {
             this.closeModal()
@@ -74,6 +78,15 @@ export default class BoxModal extends Vue {
 <style lang="scss">
 .modal-card-foot{
     display: block!important;
+}
+
+.is-box-item{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.is-delete-button{
+    margin-left: 5px
 }
 
 </style>

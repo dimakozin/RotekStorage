@@ -64,6 +64,7 @@ export default createStore({
       state.leftMenu.activeChar = null
       state.leftMenu.activeItem = null
     },
+    deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id )
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -72,7 +73,8 @@ export default createStore({
     showLeftMenu: (context) => context.commit('showLeftMenu'),
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
     addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
-    dropActiveElement: (context) => {context.commit('dropActiveElement')}
+    dropActiveElement: (context) => context.commit('dropActiveElement'),
+    deleteElement: (context, payload) => context.commit('deleteElement', payload)
   },
   modules: {
   },
