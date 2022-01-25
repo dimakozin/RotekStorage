@@ -19,11 +19,12 @@
                             <th>{{item.title}}</th>
                             <th>{{item.amount}}</th>
                             <th>                     
+                                <button class="button is-small is-primary is-delete-button"
+                                >+</button>
                                 <button class="button is-small is-danger is-delete-button"
                                 @click="deleteElement(item)"
                                 >-</button>
-                                <button class="button is-small is-primary is-delete-button"
-                                >+</button>
+
                             </th>
                         </tr>
                     </tbody>
