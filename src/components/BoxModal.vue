@@ -3,18 +3,36 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-            <p class="modal-card-title">Ящик №{{boxId}}</p>
+            <p class="modal-card-title">Секция № {{boxId}}</p>
             <button class="delete" aria-label="close" @click="close()"></button>
             </header>
             <section class="modal-card-body">
-                <div class="control is-box-item" v-for="item in GET_BY_BOX(boxId)" v-bind:key="item">
-                    <p>
-                        {{item.title}}
-                    </p>
-                    <button class="button is-small is-danger is-delete-button"
-                    @click="deleteElement(item)"
-                    >-</button>
-                </div>
+
+                <table class="table">
+                    <thead>
+                        <th>Наименование</th>
+                        <th>Количество</th>
+                        <th>Действия</th>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in GET_BY_BOX_AND_SECTION(boxId, section)" v-bind:key="item">
+                            <th>{{item.title}}</th>
+                            <th>{{item.amount}}</th>
+                            <th>                     
+                                <button class="button is-small is-danger is-delete-button"
+                                @click="deleteElement(item)"
+                                >-</button>
+                                <button class="button is-small is-primary is-delete-button"
+                                >+</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <th>Наименование</th>
+                        <th>Количество</th>
+                        <th>Действия</th>
+                    </tfoot>
+                </table>
             </section>
             <footer class="modal-card-foot">
                 <h4 class="title is-4">Добавление нового элемента</h4>
@@ -41,8 +59,12 @@ import {mapActions, mapGetters} from 'vuex'
     props: {
         boxId: {
             required: true,
-            type: Number
+            type: String
         },
+        section : {
+            required: true,
+            type: Number
+        }
     },
     data () {
         return { 
@@ -66,7 +88,7 @@ import {mapActions, mapGetters} from 'vuex'
         }
     },
     computed: {
-        ...mapGetters(['GET_MODAL_STATE', 'GET_BY_BOX']),
+        ...mapGetters(['GET_MODAL_STATE', 'GET_BY_BOX_AND_SECTION']),
     }
 })
 
@@ -87,6 +109,10 @@ export default class BoxModal extends Vue {
 
 .is-delete-button{
     margin-left: 5px
+}
+
+table.table{
+    width: 100%;
 }
 
 </style>

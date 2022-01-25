@@ -1,5 +1,5 @@
 <template>
-    <div class="leftMenu column is-4"
+    <div class="leftMenu column is-2"
     :class="[ GET_LEFT_MENU_HIDDEN_STATUS() ? 'is-hidden-touch' : 'is-overlay' ]"
     >
       <aside class="menu">
@@ -55,7 +55,13 @@ export default class LeftMenu extends Vue {
   background-color: white
   z-index: 2
 
-.menu
-  position: fixed
+aside.menu
+  width: 100%
+  background-color: white
+
+ul.menu-list
+  li
+    a.is-active
+      color: white !important
 
 </style>

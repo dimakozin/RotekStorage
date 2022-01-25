@@ -2,12 +2,24 @@
       <section class="racks">
         <div class="tabs is-centered">
             <ul>
-                <router-link tag="li" to="/first">Первая секция</router-link>
-                <router-link tag="li" to="/second">Вторая секция</router-link>
-                <router-link tag="li" to="/third">Третья секция</router-link>
-                <router-link tag="li" to="/fourth">Четвертая секция</router-link>
-                <router-link tag="li" to="/fifth">Пятая секция</router-link>
-                <router-link tag="li" to="/second">Шестая секция</router-link>
+                <router-link to="/first"
+                v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
+                >Первая секция</router-link>
+                <router-link to="/second"
+                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(2) ? 'is-active-section' : '' ]"
+                >Вторая секция</router-link>
+                <router-link to="/third"
+                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(3) ? 'is-active-section' : '' ]"
+                >Третья секция</router-link>
+                <router-link to="/fourth"
+                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(4) ? 'is-active-section' : '' ]"
+                >Четвертая секция</router-link>
+                <router-link to="/fifth"
+                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(5) ? 'is-active-section' : '' ]"
+                >Пятая секция</router-link>
+                <router-link to="/sixth"
+                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(6) ? 'is-active-section' : '' ]"
+                >Шестая секция</router-link>
             </ul>
         </div>
         <div class="rack-view">
@@ -33,7 +45,7 @@ import {mapActions, mapGetters} from 'vuex'
       ...mapActions({
           showModal: 'showModal',
       }),
-      ...mapGetters(['GET_ACTIVE_BOXES']),
+      ...mapGetters(['GET_ACTIVE_BOXES', 'GET_ACTIVE_SECTIONS']),
       showBoxModal (boxId: number) {
         this.boxId = boxId
         this.showModal()
@@ -86,4 +98,15 @@ export default class Boxes extends Vue {
 .is-main-container {
     padding: 0 0 0 0 !important;
 }
+
+a.is-active {
+    border-bottom-color: #485fc7 !important;
+    color: #485fc7 !important;
+}
+
+a.is-active-section {
+    border: 1px solid red !important;
+    color: red !important;
+}
+
 </style>
