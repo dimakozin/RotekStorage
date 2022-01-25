@@ -149,7 +149,8 @@
   
     <box-modal
   :boxId=boxId
-  :items=items   
+  :items=items
+  :section=section   
   />
 
   </div>
@@ -163,8 +164,9 @@ import {mapActions, mapGetters} from 'vuex'
 @Options({
   data() {
       return {
-        boxId: 1,
-        items: []
+        boxId: '',
+        items: [],
+        section: 5
       }
   },
   methods: {
