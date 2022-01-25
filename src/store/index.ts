@@ -463,7 +463,189 @@ export default createStore({
         section: 2,
         amount: 1,
         boxId: 'Г4'
-      }
+      },
+      {
+        id: 66,
+        title: 'Профиль 6м 40х20х1,5',
+        section: 3,
+        amount: 320,
+        boxId: 'А2'
+      },
+      {
+        id: 67,
+        title: 'Профиль радиаторный 2м 30х300',
+        section: 3,
+        amount: 1,
+        boxId: 'А2'
+      },
+      {
+        id: 68,
+        title: 'Профиль радиаторный 3м 30х300',
+        section: 3,
+        amount: 2,
+        boxId: 'А2'
+      },
+      {
+        id: 69,
+        title: 'Коробка излучатели белая',
+        section: 4,
+        amount: 5,
+        boxId: 'В5'
+      },
+      {
+        id: 70,
+        title: 'Удлинитель',
+        section: 4,
+        amount: 2,
+        boxId: 'В5'
+      },
+      {
+        id: 71,
+        title: 'Фторопластовые скользуны для стрел излучателей',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 72,
+        title: 'Ролики для стрел излучателей',
+        section: 5,
+        amount: 26,
+        boxId: 'Г3'
+      },
+      {
+        id: 73,
+        title: 'Опоры для системы опоры',
+        section: 5,
+        amount: 11,
+        boxId: 'Г3'
+      },
+      {
+        id: 74,
+        title: 'Лебедки со стальным барабаном',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 75,
+        title: 'Полукольца для лебедок со стальными барабанами',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 76,
+        title: 'Детали стрелы излучателя',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 77,
+        title: 'Лебедки со стальным барабаном',
+        section: 5,
+        amount: 2,
+        boxId: 'Г3'
+      },
+      {
+        id: 78,
+        title: 'Двигатели лебедок',
+        section: 5,
+        amount: 5,
+        boxId: 'Г3'
+      },
+      {
+        id: 79,
+        title: 'Детали системы фиксации',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 80,
+        title: 'Токарные детали системы фиксации',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 81,
+        title: 'Кроншейн модулей прожектора',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 82,
+        title: 'Запчасти модуля АКБ',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 83,
+        title: 'Шарнирные опоры усиленные (черные)',
+        section: 5,
+        amount: 12,
+        boxId: 'Г3'
+      },
+      {
+        id: 84,
+        title: 'Полиэтиленовые и фторопластовые заготовки для СКНВ',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 85,
+        title: 'Детали излучателя СКНВ',
+        section: 5,
+        amount: 1,
+        boxId: 'Г3'
+      },
+      {
+        id: 86,
+        title: 'Двигатели лебедок разобранные',
+        section: 5,
+        amount: 3,
+        boxId: 'Г3'
+      },
+      {
+        id: 87,
+        title: 'Лебедки со стальными барабанами',
+        section: 5,
+        amount: 2,
+        boxId: 'Г3'
+      },
+      {
+        id: 88,
+        title: 'Лебедки со стальными барабанами',
+        section: 5,
+        amount: 2,
+        boxId: 'Г3'
+      },
+      {
+        id: 89,
+        title: 'Лебедки со стальными барабанами',
+        section: 5,
+        amount: 2,
+        boxId: 'Г3'
+      },
+      {
+        id: 90,
+        title: 'Штанги опорные привода вертикального',
+        section: 5,
+        amount: 2,
+        boxId: 'Г3'
+      },
+      {
+        id: 91,
+        title: 'Опорный каркас с ОПУ с кожухом опорно-поворотной системой',
+        section: 6,
+        amount: 2,
+        boxId: 'Д6'
+      },
     ]
   },
   mutations: {
