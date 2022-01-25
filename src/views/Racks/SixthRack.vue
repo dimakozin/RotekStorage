@@ -10,6 +10,98 @@
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А1')}"
+            @click="showBoxModal('А1')">
+                А1
+            </button>
+            
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' :
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А2')}"
+            @click="showBoxModal('А2')">
+                А2
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А3')}"
+            @click="showBoxModal('А3')">
+                А3
+            </button>
+            
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' :
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А4')}"
+            @click="showBoxModal('А4')">
+                А4
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А5')}"
+            @click="showBoxModal('А5')">
+                А5
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А6')}"
+            @click="showBoxModal('А6')">
+                А6
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А7')}"
+            @click="showBoxModal('А7')">
+                А7
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А8')}"
+            @click="showBoxModal('А8')">
+                А8
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А9')}"
+            @click="showBoxModal('А9')">
+                А9
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А10')}"
+            @click="showBoxModal('А10')">
+                А10
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(6) &
+            GET_ACTIVE_BOXES().includes('А11')}"
+            @click="showBoxModal('А11')">
+                А11
+            </button>
+        </div>
+
+        <div class="is-overlap"></div>
+
+        <div class="is-shelf">
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' :             
+            GET_ACTIVE_SECTIONS().includes(6) &
             GET_ACTIVE_BOXES().includes('Б1')}"
             @click="showBoxModal('Б1')">
                 Б1
