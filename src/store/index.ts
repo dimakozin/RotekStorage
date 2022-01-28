@@ -646,6 +646,27 @@ export default createStore({
         amount: 2,
         boxId: 'Д6'
       },
+      {
+        id: 92,
+        title: 'Платформа с лампой',
+        section: 5,
+        amount: 9,
+        boxId: 'В3'
+      },
+      {
+        id: 94,
+        title: 'Излучатели RB',
+        section: 5,
+        amount: 6,
+        boxId: 'А5'
+      },
+      {
+        id: 95,
+        title: 'Излучатели ШЕПОТ',
+        section: 5,
+        amount: 12,
+        boxId: 'Б5'
+      },
     ]
   },
   mutations: {

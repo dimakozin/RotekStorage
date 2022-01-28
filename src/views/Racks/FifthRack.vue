@@ -4,51 +4,6 @@
       <div class="column is-1 is-wall is-hidden-mobile"></div>
         <div class="column is-main-container">
                     
-        <div class="is-shelf"></div>
-
-        <div class="is-shelf">
-            <button class="button is-primary is-large modal-button is-box"
-                :class="{'is-active-box' :
-                GET_ACTIVE_SECTIONS().includes(5) &
-                GET_ACTIVE_BOXES().includes('А1')}"
-                @click="showBoxModal('А1')">
-                А1
-            </button>
-
-            <button class="button is-primary is-large modal-button is-box"
-                :class="{'is-active-box' :
-                GET_ACTIVE_SECTIONS().includes(5) &
-                GET_ACTIVE_BOXES().includes('А2')}"
-                @click="showBoxModal('А2')">
-                А2
-            </button>
-
-            <button class="button is-primary is-large modal-button is-box"
-                :class="{'is-active-box' :
-                GET_ACTIVE_SECTIONS().includes(5) &
-                GET_ACTIVE_BOXES().includes('А3')}"
-                @click="showBoxModal('А3')">
-                А3
-            </button>
-
-            <button class="button is-primary is-large modal-button is-box"
-                :class="{'is-active-box' :
-                GET_ACTIVE_SECTIONS().includes(5) &
-                GET_ACTIVE_BOXES().includes('А4')}"
-                @click="showBoxModal('А4')">
-                А4
-            </button>
-
-            <button class="button is-primary is-large modal-button is-box"
-                :class="{'is-active-box' :
-                GET_ACTIVE_SECTIONS().includes(5) &
-                GET_ACTIVE_BOXES().includes('А5')}"
-                @click="showBoxModal('А5')">
-                А5
-            </button>
-        </div>
-
-        <div class="is-overlap"></div>
 
         <div class="is-shelf">
             <button class="button is-primary is-large modal-button is-box"
