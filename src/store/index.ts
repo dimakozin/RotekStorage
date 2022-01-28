@@ -667,6 +667,55 @@ export default createStore({
         amount: 12,
         boxId: 'Б5'
       },
+      {
+        id: 96,
+        title: 'Сварочный аппарат аргонно-дуговой сварки',
+        section: 5,
+        amount: 2,
+        boxId: 'Г4'
+      },
+      {
+        id: 97,
+        title: 'Охладитель для сварки',
+        section: 5,
+        amount: 1,
+        boxId: 'Г4'
+      },
+      {
+        id: 98,
+        title: 'Уровень строительный',
+        section: 5,
+        amount: 2,
+        boxId: 'Г4'
+      },
+      {
+        id: 98,
+        title: 'Маска сварщика',
+        section: 5,
+        amount: 1,
+        boxId: 'Г4'
+      },
+      {
+        id: 99,
+        title: 'Маска защиты для сварки',
+        section: 5,
+        amount: 1,
+        boxId: 'Г4'
+      },
+      {
+        id: 100,
+        title: 'Проволока сварочная присадочная',
+        section: 5,
+        amount: 10,
+        boxId: 'Г4'
+      },
+      {
+        id: 101,
+        title: 'Электроды',
+        section: 5,
+        amount: 1,
+        boxId: 'Г4'
+      },
     ]
   },
   mutations: {
