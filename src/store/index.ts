@@ -1,5 +1,12 @@
 import { createStore } from 'vuex'
-import fileStore from './subjects.json'
+
+interface ISubject {
+  id: number,
+  boxId: string,
+  title: string,
+  amount: number,
+  section: number
+}
 
 export default createStore({
   state: {
@@ -9,7 +16,7 @@ export default createStore({
       isHidden: true
     },
     showModal: false,
-    subjects: fileStore.subjects
+    subjects: Array<ISubject>()
   },
   mutations: {
     showModal (state) {
@@ -41,7 +48,8 @@ export default createStore({
       state.leftMenu.activeChar = null
       state.leftMenu.activeItem = null
     },
-    deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id )
+    deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
+    setStorage: (state, subjects)  => state.subjects = subjects,
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -51,7 +59,8 @@ export default createStore({
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
     addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
     dropActiveElement: (context) => context.commit('dropActiveElement'),
-    deleteElement: (context, payload) => context.commit('deleteElement', payload)
+    deleteElement: (context, payload) => context.commit('deleteElement', payload),
+    setStorage: (context, payload) => context.commit('setStorage', payload)
   },
   modules: {
   },
