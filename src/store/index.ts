@@ -93,10 +93,14 @@ export default createStore({
   },
   getters: {
     GET_ALL_SUBJECTS: state => state.subjects,
-    GET_BY_NAME: (state) => (name: string) => state.subjects.filter(subject => subject.title?.toLowerCase()
-    .includes(name?.toLowerCase()))
-    .map(item => item.title)
-    .filter((value, index, self) => self.indexOf(value) === index),
+    GET_BY_NAME: (state) => (name: string) => {
+      if(!!state.subjects) {
+        return state.subjects.filter(subject => subject.title?.toLowerCase()
+        .includes(name?.toLowerCase()))
+        .map(item => item.title)
+        .filter((value, index, self) => self.indexOf(value) === index)
+      } 
+    },
     GET_ALL_UNIQUE_SORTED_BY_NAME: (state) => {
 
       interface ISortedObject {
@@ -104,48 +108,57 @@ export default createStore({
         items: Array<string>
       }
         let result = [] as Array<ISortedObject>
-        state.subjects.forEach(subject => {
-          let firstChar = subject.title[0]
-          let findByChar = result.find(item => item.char === firstChar)
-
-          if(!!findByChar){
-            // check unique
-            if(!findByChar!.items.some( title => title == subject.title)){
-              findByChar!.items.push(subject.title)
+        if(!!state.subjects){
+          state.subjects.forEach(subject => {
+            let firstChar = subject.title[0]
+            let findByChar = result.find(item => item.char === firstChar)
+  
+            if(!!findByChar){
+              // check unique
+              if(!findByChar!.items.some( title => title == subject.title)){
+                findByChar!.items.push(subject.title)
+              }
+  
             }
-
-          }
-          else {
-            result.push({
-              char: firstChar,
-              items: [ subject.title ]
-            })
-          }
-        })
+            else {
+              result.push({
+                char: firstChar,
+                items: [ subject.title ]
+              })
+            }
+          })
+  
+        }
         return result.sort( (a,b) => {
           if(a.char > b.char) return 1
           else if(a.char == b.char) return 0
           else return -1
         })},
-    GET_BY_BOX_AND_SECTION: (state) => (boxId: string, section: number) => 
-      state.subjects.filter(subject => subject.boxId === boxId && subject.section === section),
+    GET_BY_BOX_AND_SECTION: (state) => (boxId: string, section: number) => {
+      if(!!state.subjects){
+        return state.subjects.filter(subject => subject.boxId === boxId && subject.section === section)
+      } 
+    },
     GET_MODAL_STATE: (state) => state.showModal,
     GET_ACTIVE_MENU_PARAMS: (state) => { return {char: state.leftMenu.activeChar, item: state.leftMenu.activeItem}},
     GET_ACTIVE_BOXES: (state) => {
       let result = [] as Array<string>
-      state.subjects.forEach( (el) => {
-        if(el.title == state.leftMenu.activeItem) result.push(el.boxId)
-      })
+      if(!!state.subjects){
+        state.subjects.forEach( (el) => {
+          if(el.title == state.leftMenu.activeItem) result.push(el.boxId)
+        })
+      }
       return result
     },
     GET_LEFT_MENU_HIDDEN_STATUS: (state) => state.leftMenu.isHidden,
     GET_ACTIVE_SECTIONS: (state) => {
       let result = [] as Array<number>;
-      state.subjects.forEach(subject => {
-        if(subject.title == state.leftMenu.activeItem)
-          if(!result.includes(subject.section)) result.push(subject.section)
-      })
-
+      if(!!state.subjects){
+        state.subjects.forEach(subject => {
+          if(subject.title == state.leftMenu.activeItem)
+            if(!result.includes(subject.section)) result.push(subject.section)
+        })
+      }
       return result
     }
   },
