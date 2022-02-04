@@ -14,38 +14,22 @@ import LeftMenu from '@/components/LeftMenu.vue'
 import FindPanel from '@/components/FindPanel.vue';
 import Boxes from '@/components/Boxes.vue';
 import {mapActions} from 'vuex'
-import axios from 'axios'
+
 
 @Options({
   components: {
     LeftMenu, FindPanel, Boxes
   },
   methods: {
-    ...mapActions(['dropActiveElement', 'setStorage']),
+    ...mapActions(['dropActiveElement', 'getRemoteStorage']),
   },
   mounted () {
     window.addEventListener('keydown', (ev) => {
       this.dropActiveElement()
     })
 
-    const GRAPHQLServerURL = 'http://localhost:3000/graphql'
-    axios.post(GRAPHQLServerURL, {
-      query: `query {
-        storage{
-          id
-          title
-          section
-          amount
-          boxId
-        }}`}).then( response => {
-          const storage = response.data.data.storage
-          this.setStorage(storage)
-
-    }).catch (error => {
-      console.error(error)
-    })
-
-  }
+    this.getRemoteStorage()
+    }
 })
 
 export default class Home extends Vue {}

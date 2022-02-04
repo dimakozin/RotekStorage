@@ -1,5 +1,7 @@
 import { createStore } from 'vuex'
+import axios from 'axios'
 
+const GRAPHQLServerURL = 'http://localhost:3000/graphql'
 interface ISubject {
   id: number,
   boxId: string,
@@ -36,20 +38,45 @@ export default createStore({
       state.leftMenu.isHidden = true
     },
     addNewSubject(state, subject){ 
-      state.subjects.push({
-        id: 0,
-        boxId: subject.boxId,
-        title: subject.title,
-        amount: 1,
-        section: 1
-      })
+      axios.post(GRAPHQLServerURL, {
+        query: `mutation{
+          addSubject(input:{
+            title:"${subject.title}",
+            section: 1,
+            amount: 1,
+            boxId:"${subject.boxId}"
+            }
+          ){
+            id
+          }
+        }`}).then( response => {
+            const storage = response.data.data.storage
+            state.subjects = storage
+          }).catch (error => {
+            console.error(error)
+          })
     },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
       state.leftMenu.activeItem = null
     },
     deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
-    setStorage: (state, subjects)  => state.subjects = subjects,
+    getRemoteStorage: (state)  => {
+      axios.post(GRAPHQLServerURL, {
+        query: `query {
+          storage{
+            id
+            title
+            section
+            amount
+            boxId
+          }}`}).then( response => {
+            const storage = response.data.data.storage
+            state.subjects = storage
+          }).catch (error => {
+            console.error(error)
+          })
+    },
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -60,7 +87,7 @@ export default createStore({
     addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
     dropActiveElement: (context) => context.commit('dropActiveElement'),
     deleteElement: (context, payload) => context.commit('deleteElement', payload),
-    setStorage: (context, payload) => context.commit('setStorage', payload)
+    getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload)
   },
   modules: {
   },
