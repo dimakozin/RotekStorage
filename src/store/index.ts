@@ -56,6 +56,34 @@ export default createStore({
             console.error(error)
           })
     },
+    addOne (state, id) {
+      axios.post(GRAPHQLServerURL, {
+        query: `
+        mutation{
+          addOne(input: {
+            id: ${id}
+          }){
+            id
+          }
+        }
+        `}).catch (error => {
+            console.error(error)
+          })
+    },
+    removeOne (state, id) {
+      axios.post(GRAPHQLServerURL, {
+        query: `
+        mutation{
+          removeOne(input: {
+            id: ${id}
+          }){
+            id
+          }
+        }
+        `}).catch (error => {
+            console.error(error)
+          })
+    },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
       state.leftMenu.activeItem = null
@@ -87,7 +115,9 @@ export default createStore({
     addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
     dropActiveElement: (context) => context.commit('dropActiveElement'),
     deleteElement: (context, payload) => context.commit('deleteElement', payload),
-    getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload)
+    getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload),
+    addOne: (context, payload) => context.commit('addOne', payload),
+    removeOne: (context, payload) => context.commit('removeOne', payload),
   },
   modules: {
   },

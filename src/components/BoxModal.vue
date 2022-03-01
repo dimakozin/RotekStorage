@@ -20,11 +20,11 @@
                             <th>{{item.amount}}</th>
                             <th>                     
                                 <button class="button is-small is-primary is-delete-button"
+                                @click="addOne(item.id)"
                                 >+</button>
                                 <button class="button is-small is-danger is-delete-button"
-                                @click="deleteElement(item)"
+                                @click="removeOne(item.id)"
                                 >-</button>
-
                             </th>
                         </tr>
                     </tbody>
@@ -76,7 +76,9 @@ import {mapActions, mapGetters} from 'vuex'
         ...mapActions({
             closeModal: 'closeModal',
             addNewSubject: 'addNewSubject',
-            deleteElement: 'deleteElement'
+            deleteElement: 'deleteElement',
+            addOne: 'addOne',
+            removeOne: 'removeOne'
         }),
         close () {
             this.closeModal()
@@ -86,6 +88,12 @@ import {mapActions, mapGetters} from 'vuex'
                 boxId: this.boxId,
                 title: this.newSubjectTitle
             })
+        },
+        addOne (id : number) {
+            this.addOne(id)
+        },
+        removeOne (id: number) {
+            this.removeOne(id)
         }
     },
     computed: {
