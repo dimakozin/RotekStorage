@@ -167,6 +167,11 @@ export default createStore({
     GET_BY_BOX_AND_SECTION: (state) => (boxId: string, section: number) => {
       if(!!state.subjects){
         return state.subjects.filter(subject => subject.boxId === boxId && subject.section === section)
+                .sort( (obj1, obj2) => {
+                  if(obj1.title > obj2.title) return 1
+                  if(obj1.title < obj2.title) return -1
+                  return 0
+                })
       } 
     },
     GET_MODAL_STATE: (state) => state.showModal,
