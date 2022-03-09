@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import offlineStorage from './offlineStorage'
 
 const GRAPHQLServerURL = 'http://localhost:3000/graphql'
 interface ISubject {
@@ -90,6 +91,10 @@ export default createStore({
     },
     deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
     getRemoteStorage: (state)  => {
+
+      state.subjects = offlineStorage.subjects
+      // TODO: remove comments line for remote storage (need storage server)
+      /*
       axios.post(GRAPHQLServerURL, {
         query: `query {
           storage{
@@ -104,6 +109,7 @@ export default createStore({
           }).catch (error => {
             console.error(error)
           })
+        */
     },
   },
   actions: {
