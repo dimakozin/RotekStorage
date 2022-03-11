@@ -5,455 +5,455 @@ export default {
         "title": "Лист Д16 3000х1200х10",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 1,
         "title": "Лист АМГ5 800х830х8",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 2,
         "title": "Лист АМГ14 1020х310х14",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 3,
         "title": "Лист Сталь3 1600х700х4",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 4,
         "title": "Лист АМГ 3000х1500х6",
         "section": 2,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 5,
         "title": "Лист Поликарбонат 2190х1600х8",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 6,
         "title": "Лист МДФ 2000х1600х30",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 7,
         "title": "Лист МДФ 1120х1250х30",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 8,
         "title": "Лист Д16АТ 3000х1500х3",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 9,
         "title": "Лист МДФ 1120х1250х30",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 10,
         "title": "Лист МДФ 3000х1500х3",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 11,
         "title": "Лист Д16АТ 3000х1500х3",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 12,
         "title": "Лист Д16АТ 3000х1500х2",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 13,
         "title": "Лист Д16АТ 3000х1500х2",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 14,
         "title": "Лист Д16АТ 3000х1500х4",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 15,
         "title": "Лист Д16АТ 2600х1500х1,5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 16,
         "title": "Полиетилен черный 3000х1500х20",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 17,
         "title": "Полиетилен черный 1030х1332х20",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 18,
         "title": "Текстолит ПТК-5 1020х540х7",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 19,
         "title": "Текстолит ПТК-5 930х1570х5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 20,
         "title": "Текстолит ПТК-5 1150х1030х5",
         "section": 2,
         "amount": 5,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 21,
         "title": "Текстолит ПТК-5 930х1570х5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 22,
         "title": "Лист АМГ-2 3000х1200х1",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 23,
         "title": "Лист АМГ 3000х1500х3",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 24,
         "title": "Уголок алюминиевый 3м 12х12х1,5",
         "section": 2,
         "amount": 25,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 25,
         "title": "Уголок алюминиевый 1м 15х15х1,5",
         "section": 2,
         "amount": 6,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 26,
         "title": "Швелер 3м 100х50х5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 27,
         "title": "Швелер 3м 80х40х5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 28,
         "title": "Швелер 3м 60х40х5",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 29,
         "title": "Труба АД-31 3м 100х3",
         "section": 2,
         "amount": 7,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 30,
         "title": "Труба 590 160х10",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 31,
         "title": "Труба Д16Т 100х470",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 32,
         "title": "Профиль 3м 600х40х3",
         "section": 2,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 33,
         "title": "Круг Д16Т 450х80",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 34,
         "title": "Круг Д16Т 2500х70",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 35,
         "title": "Круг Д16Т 3000х60",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 36,
         "title": "Круг Д16Т 3000х35",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 37,
         "title": "Круг Д16Т 3000х30",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 38,
         "title": "Круг Д16Т 3000х20",
         "section": 2,
         "amount": 6,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 39,
         "title": "Труба Д16Т 60х40х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 40,
         "title": "Труба Д16Т 40х2,5х1400",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 41,
         "title": "Труба Д16Т 40х2,5х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 42,
         "title": "Труба Д16Т 20х1,5х690",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 43,
         "title": "Труба Д16Т 80х3х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 44,
         "title": "Труба Д16Т 40х2,5х1400",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 45,
         "title": "Труба Сталь3 60х4х3000",
         "section": 2,
         "amount": 6,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 46,
         "title": "Швелер Сталь3 80х40х3000",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 47,
         "title": "Труба Сталь3 65х35х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 48,
         "title": "Швелер Д16Т 50х30х3000",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 49,
         "title": "Угол 50х50х4х3000",
         "section": 2,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 50,
         "title": "Угол 45х45х4",
         "section": 2,
         "amount": 5,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 51,
         "title": "Угол 40х40х4",
         "section": 2,
         "amount": 9,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 52,
         "title": "Круг Сталь20 110х320",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 53,
         "title": "Круг Нержав 95х280",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 54,
         "title": "Круг Сталь20 110х150",
         "section": 2,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 55,
         "title": "Круг Сталь20 60х2000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 56,
         "title": "Круг Сталь20 70х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 57,
         "title": "Круг Сталь20 70х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 58,
         "title": "Круг Сталь20 105х440",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 59,
         "title": "Труба Сталь3 65х8х2000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 60,
         "title": "Труба Сталь3 64х13х2000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 61,
         "title": "Профиль Сталь3 50х50х870",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 62,
         "title": "Профиль Сталь3 120х120х3х3000",
         "section": 2,
         "amount": 3,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 63,
         "title": "Труба Сталь3 160х160х3х3000",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 64,
         "title": "Полипропилен 1500х1500х8",
         "section": 2,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 65,
@@ -621,49 +621,49 @@ export default {
         "title": "Сварочный аппарат аргонно-дуговой сварки",
         "section": 5,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 96,
         "title": "Охладитель для сварки",
         "section": 5,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 97,
         "title": "Уровень строительный",
         "section": 5,
         "amount": 2,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 97,
         "title": "Маска сварщика",
         "section": 5,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 98,
         "title": "Маска защиты для сварки",
         "section": 5,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 99,
         "title": "Проволока сварочная присадочная",
         "section": 5,
         "amount": 10,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 100,
         "title": "Электроды",
         "section": 5,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 103,
@@ -824,14 +824,14 @@ export default {
         "title": "Зарядное устройство Sonar",
         "section": 4,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 137,
         "title": "Слесарный инструмент (Кузнецов)",
         "section": 4,
         "amount": 1,
-        "boxId": "Г4"
+        "boxId": "Г5"
         },
         {
         "id": 138,
@@ -1089,14 +1089,14 @@ export default {
         "title": "Стрела выдвижная телескопическая (Шепот)",
         "section": 6,
         "amount": 1,
-        "boxId": "Г4",
+        "boxId": "Г5",
         "id": 179
         },
         {
         "title": "Матрица под СКАТ",
         "section": 6,
         "amount": 1,
-        "boxId": "Г4",
+        "boxId": "Г5",
         "id": 180
         },
         {
@@ -1117,7 +1117,7 @@ export default {
         "title": "Шепот-М",
         "section": 6,
         "amount": 1,
-        "boxId": "Г4",
+        "boxId": "Г5",
         "id": 183
         },
         {
