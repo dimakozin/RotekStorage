@@ -171,7 +171,8 @@
                 </div>
             </div>
             <div class="column">
-                    <button class="button is-large-box is-primary is-large modal-button is-box"
+                <div class="is-shelf">
+                 <button class="button is-large-box is-primary is-large modal-button is-box"
                     :class="{'is-active-box' : 
                     GET_ACTIVE_SECTIONS().includes(2) &
                     GET_ACTIVE_BOXES().includes('Г4')}"
@@ -180,6 +181,16 @@
                     >
                         Г4
                     </button>
+                    <button class="button is-large-box is-primary is-large modal-button is-box"
+                    :class="{'is-active-box' : 
+                    GET_ACTIVE_SECTIONS().includes(2) &
+                    GET_ACTIVE_BOXES().includes('Г5')}"
+                    @click="showBoxModal('Г5')"
+                    style="height: 270px !important; width: 400px !important;"
+                    >
+                        Г5
+                    </button>
+                </div>
             </div>
         </div>
       </div>
