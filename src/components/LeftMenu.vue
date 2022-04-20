@@ -7,7 +7,7 @@
               Алфавитный список
           </p>
            <ul v-for="obj in GET_ALL_UNIQUE_SORTED_BY_NAME()" v-bind:key="obj">
-            <p class="menu-label" @click="changeShowProperty(obj)">
+            <p class="menu-label menu-item" @click="changeShowProperty(obj)">
               {{obj.char}}
             </p>
             <ul class="menu-list" v-for="item in obj.items" v-bind:key="item" v-show="this.showedList.includes(obj.char)">
@@ -57,6 +57,9 @@ export default class LeftMenu extends Vue {
 </script>
 
 <style lang="sass">
+.menu-item
+  padding-left: 10px
+
 .leftMenu 
   text-align: left
   background-color: white

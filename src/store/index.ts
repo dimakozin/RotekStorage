@@ -4,11 +4,11 @@ import offlineStorage from './offlineStorage'
 
 const GRAPHQLServerURL = 'http://localhost:3000/graphql'
 interface ISubject {
-  id: number,
-  boxId: string,
-  title: string,
-  amount: number,
-  section: number
+  id: any,
+  boxId: any,
+  title: any,
+  amount: any,
+  section: any
 }
 
 export default createStore({
@@ -19,7 +19,7 @@ export default createStore({
       isHidden: true
     },
     showModal: false,
-    subjects: Array<ISubject>()
+    subjects: Array<any>()
   },
   mutations: {
     showModal (state) {

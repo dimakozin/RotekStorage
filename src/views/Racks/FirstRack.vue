@@ -8,78 +8,77 @@
 
         <div class="is-shelf">
             <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' :
+            :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А1')}"
-            @click="showBoxModal('А1')">
-                А1
+            GET_ACTIVE_BOXES().includes('А01')}"
+            @click="showBoxModal('А01')">
+                А01
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
+            :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А2')
-            }"
-            @click="showBoxModal('А2')">
-                А2
+            GET_ACTIVE_BOXES().includes('А02')}"
+            @click="showBoxModal('А02')">
+                А02
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А3')}"
-            @click="showBoxModal('А3')">
-                А3
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' :             
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А4')}"
-            @click="showBoxModal('А4')">
-                А4
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А5')}"
-            @click="showBoxModal('А5')">
-                А5
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А6')}"
-            @click="showBoxModal('А6')">
-                А6
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А7')}"
-            @click="showBoxModal('А7')">
-                А7
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А8')}"
-            @click="showBoxModal('А8')">
-                А8
-            </button>    
-
-            <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' : 
-            GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('А9')}"
-            @click="showBoxModal('А9')">
-                А9
+            GET_ACTIVE_BOXES().includes('А03')}"
+            @click="showBoxModal('А03')">
+                А03
             </button>
-  
+            
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' :
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А04')}"
+            @click="showBoxModal('А04')">
+                А04
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А05')}"
+            @click="showBoxModal('А05')">
+                А05
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А06')}"
+            @click="showBoxModal('А06')">
+                А06
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А07')}"
+            @click="showBoxModal('А07')">
+                А07
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А08')}"
+            @click="showBoxModal('А08')">
+                А08
+            </button>
+
+            <button class="button is-primary is-large modal-button is-box"
+            :class="{'is-active-box' : 
+            GET_ACTIVE_SECTIONS().includes(1) &
+            GET_ACTIVE_BOXES().includes('А09')}"
+            @click="showBoxModal('А09')">
+                А09
+            </button>
+
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
@@ -89,13 +88,12 @@
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
-            :class="{'is-active-box' :             
+            :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
             GET_ACTIVE_BOXES().includes('А11')}"
             @click="showBoxModal('А11')">
                 А11
             </button>
-
         </div>
 
         <div class="is-overlap"></div>
@@ -104,73 +102,73 @@
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б1')}"
-            @click="showBoxModal('Б1')">
-                Б1
+            GET_ACTIVE_BOXES().includes('Б01')}"
+            @click="showBoxModal('Б01')">
+                Б01
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б2')}"
-            @click="showBoxModal('Б2')">
-                Б2
+            GET_ACTIVE_BOXES().includes('Б02')}"
+            @click="showBoxModal('Б02')">
+                Б02
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б3')}"
-            @click="showBoxModal('Б3')">
-                Б3
+            GET_ACTIVE_BOXES().includes('Б03')}"
+            @click="showBoxModal('Б03')">
+                Б03
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б4')}"
-            @click="showBoxModal('Б4')">
-                Б4
+            GET_ACTIVE_BOXES().includes('Б04')}"
+            @click="showBoxModal('Б04')">
+                Б04
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б5')}"
-            @click="showBoxModal('Б5')">
-                Б5
+            GET_ACTIVE_BOXES().includes('Б05')}"
+            @click="showBoxModal('Б05')">
+                Б05
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б6')}"
-            @click="showBoxModal('Б6')">
-                Б6
+            GET_ACTIVE_BOXES().includes('Б06')}"
+            @click="showBoxModal('Б06')">
+                Б06
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б7')}"
-            @click="showBoxModal('Б7')">
-                Б7
+            GET_ACTIVE_BOXES().includes('Б07')}"
+            @click="showBoxModal('Б07')">
+                Б07
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б8')}"
-            @click="showBoxModal('Б8')">
-                Б8
+            GET_ACTIVE_BOXES().includes('Б08')}"
+            @click="showBoxModal('Б08')">
+                Б08
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Б9')}"
-            @click="showBoxModal('Б9')">
-                Б9
+            GET_ACTIVE_BOXES().includes('Б09')}"
+            @click="showBoxModal('Б09')">
+                Б09
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
@@ -196,73 +194,73 @@
                         <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В1')}"
-            @click="showBoxModal('В1')">
-                В1
+            GET_ACTIVE_BOXES().includes('В01')}"
+            @click="showBoxModal('В01')">
+                В01
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В2')}"
-            @click="showBoxModal('В2')">
-                В2
+            GET_ACTIVE_BOXES().includes('В02')}"
+            @click="showBoxModal('В02')">
+                В02
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В3')}"
-            @click="showBoxModal('В3')">
-                В3
+            GET_ACTIVE_BOXES().includes('В03')}"
+            @click="showBoxModal('В03')">
+                В03
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В4')}"
-            @click="showBoxModal('В4')">
-                В4
+            GET_ACTIVE_BOXES().includes('В04')}"
+            @click="showBoxModal('В04')">
+                В04
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В5')}"
-            @click="showBoxModal('В5')">
-                В5
+            GET_ACTIVE_BOXES().includes('В05')}"
+            @click="showBoxModal('В05')">
+                В05
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В6')}"
-            @click="showBoxModal('В6')">
-                В6
+            GET_ACTIVE_BOXES().includes('В06')}"
+            @click="showBoxModal('В06')">
+                В06
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В7')}"
-            @click="showBoxModal('В7')">
-                В7
+            GET_ACTIVE_BOXES().includes('В07')}"
+            @click="showBoxModal('В07')">
+                В07
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В8')}"
-            @click="showBoxModal('В8')">
-                В8
+            GET_ACTIVE_BOXES().includes('В08')}"
+            @click="showBoxModal('В08')">
+                В08
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('В9')}"
-            @click="showBoxModal('В9')">
-                В9
+            GET_ACTIVE_BOXES().includes('В09')}"
+            @click="showBoxModal('В09')">
+                В09
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
@@ -288,73 +286,73 @@
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г1')}"
-            @click="showBoxModal('Г1')">
-                Г1
+            GET_ACTIVE_BOXES().includes('Г01')}"
+            @click="showBoxModal('Г01')">
+                Г01
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г2')}"
-            @click="showBoxModal('Г2')">
-                Г2
+            GET_ACTIVE_BOXES().includes('Г02')}"
+            @click="showBoxModal('Г02')">
+                Г02
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г3')}"
-            @click="showBoxModal('Г3')">
-                Г3
+            GET_ACTIVE_BOXES().includes('Г03')}"
+            @click="showBoxModal('Г03')">
+                Г03
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г4')}"
-            @click="showBoxModal('Г4')">
-                Г4
+            GET_ACTIVE_BOXES().includes('Г04')}"
+            @click="showBoxModal('Г04')">
+                Г04
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г5')}"
-            @click="showBoxModal('Г5')">
-                Г5
+            GET_ACTIVE_BOXES().includes('Г05')}"
+            @click="showBoxModal('Г05')">
+                Г05
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г6')}"
-            @click="showBoxModal('Г6')">
-                Г6
+            GET_ACTIVE_BOXES().includes('Г06')}"
+            @click="showBoxModal('Г06')">
+                Г06
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г7')}"
-            @click="showBoxModal('Г7')">
-                Г7
+            GET_ACTIVE_BOXES().includes('Г07')}"
+            @click="showBoxModal('Г07')">
+                Г07
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г8')}"
-            @click="showBoxModal('Г8')">
-                Г8
+            GET_ACTIVE_BOXES().includes('Г08')}"
+            @click="showBoxModal('Г08')">
+                Г08
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Г9')}"
-            @click="showBoxModal('Г9')">
-                Г9
+            GET_ACTIVE_BOXES().includes('Г09')}"
+            @click="showBoxModal('Г09')">
+                Г09
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
@@ -381,73 +379,73 @@
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :             
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д1')}"
-            @click="showBoxModal('Д1')">
-                Д1
+            GET_ACTIVE_BOXES().includes('Д01')}"
+            @click="showBoxModal('Д01')">
+                Д01
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д2')}"
-            @click="showBoxModal('Д2')">
-                Д2
+            GET_ACTIVE_BOXES().includes('Д02')}"
+            @click="showBoxModal('Д02')">
+                Д02
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д3')}"
-            @click="showBoxModal('Д3')">
-                Д3
+            GET_ACTIVE_BOXES().includes('Д03')}"
+            @click="showBoxModal('Д03')">
+                Д03
             </button>
             
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' :
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д4')}"
-            @click="showBoxModal('Д4')">
-                Д4
+            GET_ACTIVE_BOXES().includes('Д04')}"
+            @click="showBoxModal('Д04')">
+                Д04
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д5')}"
-            @click="showBoxModal('Д5')">
-                Д5
+            GET_ACTIVE_BOXES().includes('Д05')}"
+            @click="showBoxModal('Д05')">
+                Д05
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д6')}"
-            @click="showBoxModal('Д6')">
-                Д6
+            GET_ACTIVE_BOXES().includes('Д06')}"
+            @click="showBoxModal('Д06')">
+                Д06
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д7')}"
-            @click="showBoxModal('Д7')">
-                Д7
+            GET_ACTIVE_BOXES().includes('Д07')}"
+            @click="showBoxModal('Д07')">
+                Д07
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д8')}"
-            @click="showBoxModal('Д8')">
-                Д8
+            GET_ACTIVE_BOXES().includes('Д08')}"
+            @click="showBoxModal('Д08')">
+                Д08
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
             :class="{'is-active-box' : 
             GET_ACTIVE_SECTIONS().includes(1) &
-            GET_ACTIVE_BOXES().includes('Д9')}"
-            @click="showBoxModal('Д9')">
-                Д9
+            GET_ACTIVE_BOXES().includes('Д09')}"
+            @click="showBoxModal('Д09')">
+                Д09
             </button>
 
             <button class="button is-primary is-large modal-button is-box"
@@ -476,7 +474,7 @@
   
     <box-modal
   :boxId=boxId
-  :items=items
+  :items=items   
   :section=section
   />
 
@@ -513,42 +511,3 @@ export default class FirstRack extends Vue {
   
 }
 </script>
-
-<style lang="css">
-
-.boxes{
-    padding-top: 25px;
-}
-
-.is-box {
-    width: 100% !important;
-    height: 100px !important;
-    background-color: burlywood !important;
-    /* background-image: url('../img/cartoon.jpg'); */
-    margin: 15px 10px 0px 10px;
-}
-
-.is-active-box {
-    background-color: red !important;
-}
-
-.is-wall {
-    background-color: rgb(63, 63, 224) !important;
-    width: 10px !important;
-    margin-top: 120px
-}
-
-.is-shelf {
-    display: flex;
-    padding: 10px 10px 10px 10px !important
-}
-
-.is-overlap {
-    background-color: rgb(175, 167, 167);
-    height: 20px !important;
-}
-
-.is-main-container {
-    padding: 0 0 0 0 !important;
-}
-</style>

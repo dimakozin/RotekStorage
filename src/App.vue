@@ -37,5 +37,6 @@ export default class Home extends Vue {}
 
 
 <style>
-  @import "../public/bulma.min.css"
+  @import "../public/bulma.min.css";
+  @import "../public/app.css";
 </style>
