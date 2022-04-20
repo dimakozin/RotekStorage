@@ -12,13 +12,14 @@
                         <th>Наименование</th>
                         <th>Количество</th>
                         <th>Комментарий</th>
-                        <th>Действия</th>
+                       <!-- <th>Действия</th> -->
                     </thead>
                     <tbody>
                         <tr v-for="item in GET_BY_BOX_AND_SECTION(boxId, section)" v-bind:key="item">
                             <th>{{item.title}}</th>
                             <th>{{item.amount}}</th>
                             <th>{{item.comment}}</th>
+                            <!--
                             <th>                     
                                 <button class="button is-small is-primary is-delete-button"
                                 @click="addOne(item.id)"
@@ -27,17 +28,19 @@
                                 @click="removeOne(item.id)"
                                 >-</button>
                             </th>
+                            -->
                         </tr>
                     </tbody>
                     <tfoot>
                         <th>Наименование</th>
                         <th>Количество</th>
                         <th>Комментарий</th>
-                        <th>Действия</th>
+                       <!-- <th>Действия</th> -->
                     </tfoot>
                 </table>
             </section>
             <footer class="modal-card-foot">
+                <!--
                 <h4 class="title is-4">Добавление нового элемента</h4>
                 <div class="field has-addons">
                     <div class="control is-expanded">
@@ -48,21 +51,19 @@
                         @click="addSubject()"
                         >Добавить</a>
                     </div>
-
-                    <div class="test">
-                        <a class="button"
-                        @click="test()">
-                            Тестовая кнопка для экселя
-                        </a>
-                    </div>
-
+                </div>
+                -->
+                <h4 class="title is-4">Сформировать Excel документ</h4>
+                <div class="test">
+                    <a class="button"
+                    @click="convertData()">
+                        Сформировать
+                    </a>
                 </div>
             </footer>
         </div>
         </div>
 </template>
-
-
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
@@ -107,17 +108,10 @@ import {mapActions, mapGetters} from 'vuex'
         removeOne (id: number) {
             this.removeOne(id)
         },
-        test () {
-            // XLSX imported from .min.js in index.html
-            // Too lazy to do it normally
-            const table = [
-                ["Наименование", "Секция", "Ячейка", "Количество", "Комментарий"],
-                ["Шляпа", "1", "А01", " ", ""]
-            ];
-            const data = XLSX.utils.json_to_sheet(table, {skipHeader: true});
-            const wb = XLSX.utils.book_new()
-            XLSX.utils.book_append_sheet(wb, data, "Склад")
-            XLSX.writeFile(wb,'Склад.xlsx')
+        convertData () {
+            const subjectData = this.$store.getters.GET_BY_BOX_AND_SECTION(this.boxId, this.section)
+            // @ts-ignore
+            this.$convertToExcel(XLSX, subjectData)
         }
     },
     computed: {

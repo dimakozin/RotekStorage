@@ -1,6 +1,8 @@
 <template>
       <section class="racks">
         <div class="tabs is-centered">
+            <a class="button"
+            @click="convertData()">Экспорт в Excel</a>
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
@@ -37,8 +39,6 @@ import {mapActions, mapGetters} from 'vuex'
 @Options({
   data() {
       return {
-        boxId: 1,
-        items: []
       }
   },
   methods: {
@@ -49,6 +49,35 @@ import {mapActions, mapGetters} from 'vuex'
       showBoxModal (boxId: number) {
         this.boxId = boxId
         this.showModal()
+      },
+      convertData () {
+            const rack = this.$route.name ?? "all"
+            let data = null
+            switch(rack){
+                case "firstRack": 
+                    data = this.$store.getters.GET_BY_SECTION(1)
+                    break;
+                case "secondRack": 
+                    data = this.$store.getters.GET_BY_SECTION(2)
+                    break;
+                case "thirdRack": 
+                    data = this.$store.getters.GET_BY_SECTION(3)
+                    break;
+                case "fourthRack": 
+                    data = this.$store.getters.GET_BY_SECTION(4)
+                    break;
+                case "fifthRack": 
+                    data = this.$store.getters.GET_BY_SECTION(5)
+                    break;
+                case "sixthRack": 
+                    data = this.$store.getters.GET_BY_SECTION(6)
+                    break;
+                default:
+                    data = this.$store.getters.GET_ALL_SUBJECTS
+                    break;
+            }
+            // @ts-ignore
+            this.$convertToExcel(XLSX, data)
       }
   },
   components: {BoxModal}

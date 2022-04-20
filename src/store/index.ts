@@ -201,6 +201,9 @@ export default createStore({
         })
       }
       return result
+    },
+    GET_BY_SECTION: (state) => (section: number) => {
+      return state.subjects.filter(subj => subj.section == section)
     }
   },
   }
