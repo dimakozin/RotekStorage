@@ -85,9 +85,18 @@ import { Options, Vue } from 'vue-class-component';
             d[i+1].push(jsondata[i][key])
           }
         }
+        d.shift()
 
-        console.log(d)
 
+        d.forEach(item => {
+          this.$store.dispatch("addNewSubject", {
+            title: item[0],
+            section: item[1],
+            boxId: item[2],
+            amount: item[3],
+            comment: item[4]
+          })
+        })
       } 
 
       if(rABS){

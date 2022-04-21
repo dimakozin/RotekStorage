@@ -39,7 +39,13 @@ export default createStore({
       state.leftMenu.isHidden = true
     },
     addNewSubject(state, subject){ 
-        // TODO
+        state.subjects.push({
+          title: subject.title,
+          amount: subject.amount,
+          section: subject.section,
+          boxId: subject.boxId,
+          comment: subject.comment
+        })
     },
     addOne (state, id) {
         // TODO
@@ -53,7 +59,8 @@ export default createStore({
     },
     deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
     getRemoteStorage: (state)  => {
-      state.subjects = offlineStorage.subjects
+      state.subjects = []
+      //state.subjects = offlineStorage.subjects
     },
   },
   actions: {
