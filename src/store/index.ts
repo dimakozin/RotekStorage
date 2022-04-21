@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
-import axios from 'axios'
-import offlineStorage from './offlineStorage'
+//import axios from 'axios'
+//import offlineStorage from './offlineStorage'
 
 const GRAPHQLServerURL = 'http://localhost:3000/graphql'
 interface ISubject {
