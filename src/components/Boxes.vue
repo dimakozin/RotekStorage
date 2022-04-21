@@ -22,6 +22,7 @@
                 <router-link to="/sixth"
                  v-bind:class="[ GET_ACTIVE_SECTIONS().includes(6) ? 'is-active-section' : '' ]"
                 >Шестая секция</router-link>
+                <router-link to="/">Помощь</router-link>
             </ul>
         </div>
         <div class="rack-view">

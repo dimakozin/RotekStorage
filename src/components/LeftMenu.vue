@@ -65,9 +65,11 @@ export default class LeftMenu extends Vue {
   background-color: white
   z-index: 2
 
+
 aside.menu
   width: 100%
   background-color: white
+  padding-left: 15px
 
 ul
   .menu-list

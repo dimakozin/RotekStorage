@@ -39,51 +39,13 @@ export default createStore({
       state.leftMenu.isHidden = true
     },
     addNewSubject(state, subject){ 
-      axios.post(GRAPHQLServerURL, {
-        query: `mutation{
-          addSubject(input:{
-            title:"${subject.title}",
-            section: 1,
-            amount: 1,
-            boxId:"${subject.boxId}"
-            }
-          ){
-            id
-          }
-        }`}).then( response => {
-            const storage = response.data.data.storage
-            state.subjects = storage
-          }).catch (error => {
-            console.error(error)
-          })
+        // TODO
     },
     addOne (state, id) {
-      axios.post(GRAPHQLServerURL, {
-        query: `
-        mutation{
-          addOne(input: {
-            id: ${id}
-          }){
-            id
-          }
-        }
-        `}).catch (error => {
-            console.error(error)
-          })
+        // TODO
     },
     removeOne (state, id) {
-      axios.post(GRAPHQLServerURL, {
-        query: `
-        mutation{
-          removeOne(input: {
-            id: ${id}
-          }){
-            id
-          }
-        }
-        `}).catch (error => {
-            console.error(error)
-          })
+        // TODO
     },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
@@ -91,25 +53,7 @@ export default createStore({
     },
     deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
     getRemoteStorage: (state)  => {
-
       state.subjects = offlineStorage.subjects
-      // TODO: remove comments line for remote storage (need storage server)
-      /*
-      axios.post(GRAPHQLServerURL, {
-        query: `query {
-          storage{
-            id
-            title
-            section
-            amount
-            boxId
-          }}`}).then( response => {
-            const storage = response.data.data.storage
-            state.subjects = storage
-          }).catch (error => {
-            console.error(error)
-          })
-        */
     },
   },
   actions: {

@@ -5,6 +5,7 @@ import ThirdRack from '../views/Racks/ThirdRack.vue'
 import FourthRack from '../views/Racks/FourthRack.vue'
 import FifthRack from '../views/Racks/FifthRack.vue'
 import SixthRack from '../views/Racks/SixthRack.vue'
+import Help from '../views/Help.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'sixthRack',
     component: SixthRack
   },
+  {
+    path: '/',
+    name: 'help',
+    component: Help
+  }
 ]
 
 const router = createRouter({
