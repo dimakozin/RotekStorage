@@ -59,14 +59,14 @@ export default createStore({
     },
     deleteElement: (state, deletedSubject) => { 
       state.subjects = state.subjects.filter( item => 
-        item.title  !== deletedSubject.title && 
-        item.boxId  !== deletedSubject.boxId &&
-        item.section !== deletedSubject.section 
+        !(item.title == deletedSubject.title && 
+        item.boxId  == deletedSubject.boxId &&
+        item.section == deletedSubject.section) 
       ) 
     },
     getRemoteStorage: (state)  => {
       state.subjects = []
-      //state.subjects = offlineStorage.subjects
+      // state.subjects = offlineStorage.subjects
     },
   },
   actions: {
