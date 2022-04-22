@@ -10,13 +10,6 @@
         <div class="scheme-image">
           <img src="/img/Scheme.png">
         </div>
-        <div class="export-json-button">
-          <button class="button is-danger"
-            @click="exportDB()">
-          Выгрузить JSON
-        </button>
-        </div>
-
       </div>
   </div>
 </template>

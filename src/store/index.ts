@@ -57,7 +57,13 @@ export default createStore({
       state.leftMenu.activeChar = null
       state.leftMenu.activeItem = null
     },
-    deleteElement: (state, deletedSubject) => state.subjects = state.subjects.filter( item => item.id  !== deletedSubject.id ),
+    deleteElement: (state, deletedSubject) => { 
+      state.subjects = state.subjects.filter( item => 
+        item.title  !== deletedSubject.title && 
+        item.boxId  !== deletedSubject.boxId &&
+        item.section !== deletedSubject.section 
+      ) 
+    },
     getRemoteStorage: (state)  => {
       state.subjects = []
       //state.subjects = offlineStorage.subjects

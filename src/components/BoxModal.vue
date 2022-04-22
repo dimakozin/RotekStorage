@@ -12,35 +12,38 @@
                         <th>Наименование</th>
                         <th>Количество</th>
                         <th>Комментарий</th>
-                       <!-- <th>Действия</th> -->
+                       <th>Действия</th>
                     </thead>
                     <tbody>
                         <tr v-for="item in GET_BY_BOX_AND_SECTION(boxId, section)" v-bind:key="item">
                             <th>{{item.title}}</th>
-                            <th>{{item.amount}}</th>
-                            <th>{{item.comment}}</th>
-                            <!--
-                            <th>                     
+                            <th>{{item.amount}}
                                 <button class="button is-small is-primary is-delete-button"
-                                @click="addOne(item.id)"
+                                @click="addOne(item)"
                                 >+</button>
                                 <button class="button is-small is-danger is-delete-button"
-                                @click="removeOne(item.id)"
+                                @click="removeOne(item)"
                                 >-</button>
                             </th>
-                            -->
+                            <th>
+                                <input v-model="item.comment" placeholder="Введите комментарий..."/>
+                            </th>
+                            <th> 
+                                <button class="button is-small is-danger is-delete-button"
+                                @click="removeItem(item)"
+                                >🗑️</button>
+                            </th>
                         </tr>
                     </tbody>
                     <tfoot>
                         <th>Наименование</th>
                         <th>Количество</th>
                         <th>Комментарий</th>
-                       <!-- <th>Действия</th> -->
+                        <th>Действия</th>
                     </tfoot>
                 </table>
             </section>
             <footer class="modal-card-foot">
-                <!--
                 <h4 class="title is-4">Добавление нового элемента</h4>
                 <div class="field has-addons">
                     <div class="control is-expanded">
@@ -52,7 +55,6 @@
                         >Добавить</a>
                     </div>
                 </div>
-                -->
                 <h4 class="title is-4">Сформировать Excel документ</h4>
                 <div class="test">
                     <a class="button"
@@ -99,14 +101,19 @@ import {mapActions, mapGetters} from 'vuex'
         addSubject () {
             this.addNewSubject({
                 boxId: this.boxId,
-                title: this.newSubjectTitle
+                title: this.newSubjectTitle,
+                section: this.section,
+                amount: 1
             })
         },
-        addOne (id : number) {
-            this.addOne(id)
+        addOne (item: any) {
+            item.amount++
         },
-        removeOne (id: number) {
-            this.removeOne(id)
+        removeOne (item: any) {
+            item.amount-- 
+        },
+        removeItem (item: any){
+            this.deleteElement(item)
         },
         convertData () {
             const subjectData = this.$store.getters.GET_BY_BOX_AND_SECTION(this.boxId, this.section)
@@ -125,6 +132,11 @@ export default class BoxModal extends Vue {
 </script>
 
 <style lang="scss">
+
+.modal-card{ 
+    width: 800px !important;
+}
+
 .modal-card-foot{
     display: block!important;
 }
