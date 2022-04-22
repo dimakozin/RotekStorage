@@ -2,7 +2,10 @@
   <div class="columns">
       <div class="column scheme">
         <div class="excel-db-import">
-          <input type="file" @change="test"/>
+          <button class="button" onclick="document.getElementById('loadFile').click();">
+            Загрузите Excel file
+            <input type="file" id="loadFile" style="display:none" @change="test"/>
+          </button>
         </div>
         <h1 class="title scheme-title">
           План размещения и нумерация стеллажей хранения в цехе

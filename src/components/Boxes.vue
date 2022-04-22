@@ -1,5 +1,5 @@
 <template>
-      <section class="racks">
+    <section class="racks">
         <div class="tabs is-centered">
             <a class="button"
             @click="convertData()">Экспорт в Excel</a>
@@ -8,19 +8,19 @@
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
                 >Первая секция</router-link>
                 <router-link to="/second"
-                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(2) ? 'is-active-section' : '' ]"
+                    v-bind:class="[ GET_ACTIVE_SECTIONS().includes(2) ? 'is-active-section' : '' ]"
                 >Вторая секция</router-link>
                 <router-link to="/third"
-                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(3) ? 'is-active-section' : '' ]"
+                    v-bind:class="[ GET_ACTIVE_SECTIONS().includes(3) ? 'is-active-section' : '' ]"
                 >Третья секция</router-link>
                 <router-link to="/fourth"
-                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(4) ? 'is-active-section' : '' ]"
+                    v-bind:class="[ GET_ACTIVE_SECTIONS().includes(4) ? 'is-active-section' : '' ]"
                 >Четвертая секция</router-link>
                 <router-link to="/fifth"
-                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(5) ? 'is-active-section' : '' ]"
+                    v-bind:class="[ GET_ACTIVE_SECTIONS().includes(5) ? 'is-active-section' : '' ]"
                 >Пятая секция</router-link>
                 <router-link to="/sixth"
-                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(6) ? 'is-active-section' : '' ]"
+                    v-bind:class="[ GET_ACTIVE_SECTIONS().includes(6) ? 'is-active-section' : '' ]"
                 >Шестая секция</router-link>
                 <router-link to="/">Помощь</router-link>
             </ul>
@@ -28,7 +28,6 @@
         <div class="rack-view">
             <router-view></router-view>
         </div>
-
     </section>
 </template>
 
@@ -95,6 +94,8 @@ export default class Boxes extends Vue {
 .racks{
     padding-top: 25px;
     padding-bottom: 15px;
+    overflow: auto;
+    overflow-y:hidden;
 }
 
 .is-box {

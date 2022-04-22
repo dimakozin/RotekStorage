@@ -3,14 +3,14 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-            <p class="modal-card-title">Ячейка № {{boxId}}</p>
+            <p class="modal-card-title">Секция {{section}} | Ячейка № {{boxId}}</p>
             <button class="delete" aria-label="close" @click="close()"></button>
             </header>
             <section class="modal-card-body">
                 <table class="table">
                     <thead>
                         <th>Наименование</th>
-                        <th>Количество</th>
+                        <th class="item-amount">Количество</th>
                         <th>Комментарий</th>
                        <th>Действия</th>
                     </thead>
@@ -133,6 +133,7 @@ export default class BoxModal extends Vue {
 
 <style lang="scss">
 
+
 .modal-card{ 
     width: 800px !important;
 }
@@ -152,6 +153,10 @@ export default class BoxModal extends Vue {
 
 table.table{
     width: 100%;
+}
+
+.item-amount{
+    widows: 150px;
 }
 
 </style>
