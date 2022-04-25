@@ -19,7 +19,10 @@
                             <th>
                                 <input v-model="item.title" placeholder="Введите наименование..."/>
                             </th>
-                            <th>{{item.amount}}
+                            <th class="amount-th">
+                                <div class="amount">
+                                    {{item.amount}}
+                                </div>
                                 <button class="button is-small is-primary is-delete-button"
                                 @click="addOne(item)"
                                 >+</button>
@@ -137,6 +140,13 @@ export default class BoxModal extends Vue {
 
 <style lang="scss">
 
+div.amount{
+    min-width: 17px;
+}
+
+.amount-th{
+    display: flex;
+}
 
 .modal-card{ 
     width: 800px !important;
