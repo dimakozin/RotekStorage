@@ -19,6 +19,7 @@ export default createStore({
       isHidden: true
     },
     showModal: false,
+    isEdited: false as boolean,
     subjects: Array<any>()
   },
   mutations: {
@@ -46,12 +47,15 @@ export default createStore({
           boxId: subject.boxId,
           comment: subject.comment
         })
+        state.isEdited = true
     },
     addOne (state, id) {
         // TODO
+        state.isEdited = true
     },
     removeOne (state, id) {
         // TODO
+        state.isEdited = true
     },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
@@ -62,12 +66,14 @@ export default createStore({
         !(item.title == deletedSubject.title && 
         item.boxId  == deletedSubject.boxId &&
         item.section == deletedSubject.section) 
-      ) 
+      )
+      state.isEdited = true
     },
     getRemoteStorage: (state)  => {
       state.subjects = []
       // state.subjects = offlineStorage.subjects
     },
+    dropEditedStatus: (state) => {state.isEdited = false},
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -81,6 +87,7 @@ export default createStore({
     getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload),
     addOne: (context, payload) => context.commit('addOne', payload),
     removeOne: (context, payload) => context.commit('removeOne', payload),
+    dropEditedStatus: (context) => context.commit('dropEditedStatus')
   },
   modules: {
   },
@@ -161,7 +168,8 @@ export default createStore({
     },
     GET_BY_SECTION: (state) => (section: number) => {
       return state.subjects.filter(subj => subj.section == section)
-    }
+    },
+    GET_EDITED_STATUS: state => state.isEdited
   },
   }
 )

@@ -9,14 +9,16 @@
             <section class="modal-card-body">
                 <table class="table">
                     <thead>
-                        <th>Наименование</th>
-                        <th class="item-amount">Количество</th>
-                        <th>Комментарий</th>
-                       <th>Действия</th>
+                        <th class="table-header">Наименование</th>
+                        <th class="item-amount table-header">Количество</th>
+                        <th class="table-header">Комментарий</th>
+                        <th class="table-header">Действия</th>
                     </thead>
                     <tbody>
                         <tr v-for="item in GET_BY_BOX_AND_SECTION(boxId, section)" v-bind:key="item">
-                            <th>{{item.title}}</th>
+                            <th>
+                                <input v-model="item.title" placeholder="Введите наименование..."/>
+                            </th>
                             <th>{{item.amount}}
                                 <button class="button is-small is-primary is-delete-button"
                                 @click="addOne(item)"
@@ -36,10 +38,10 @@
                         </tr>
                     </tbody>
                     <tfoot>
-                        <th>Наименование</th>
-                        <th>Количество</th>
-                        <th>Комментарий</th>
-                        <th>Действия</th>
+                        <th class="table-header">Наименование</th>
+                        <th class="table-header">Количество</th>
+                        <th class="table-header">Комментарий</th>
+                        <th class="table-header">Действия</th>
                     </tfoot>
                 </table>
             </section>
@@ -108,9 +110,11 @@ import {mapActions, mapGetters} from 'vuex'
         },
         addOne (item: any) {
             item.amount++
+            this.addOne()
         },
         removeOne (item: any) {
-            item.amount-- 
+            item.amount--
+            this.removeOne() 
         },
         removeItem (item: any){
             this.deleteElement(item)
@@ -153,6 +157,10 @@ export default class BoxModal extends Vue {
 
 table.table{
     width: 100%;
+}
+
+th.table-header{
+    text-align: center !important;
 }
 
 .item-amount{

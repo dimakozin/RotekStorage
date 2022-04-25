@@ -1,11 +1,22 @@
 <template>
   <div class="columns">
       <div class="column scheme">
+        <h1 class="title">Информация по пользованию программой</h1>
+        <div class="help-info">
+          Перед началом использования программы необходимо загрузить базу (Excel файл)
+        </div>
         <div class="excel-db-import">
           <button class="button" onclick="document.getElementById('loadFile').click();">
             Загрузите Excel file
-            <input type="file" id="loadFile" style="display:none" @change="test"/>
+            <input type="file" id="loadFile" style="display:none" @change="importFromExcel"/>
           </button>
+        </div>
+        <div class="help-info">
+          После загрузки файла можно просматривать и вносить изменения в ячейки
+        </div>
+        <div class="help-info">
+          Экспорт всей базы осуществляется при переходе во вкладку "Помощь" и клике на кнопку "Экспорт в Excel".
+          При клике на эту кнопку при открытой секции (или открытой ячейке) будет осуществлен экспорт по выбранной секции/ячейке
         </div>
         <h1 class="title scheme-title">
           План размещения и нумерация стеллажей хранения в цехе
@@ -19,12 +30,20 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { mapActions, mapGetters } from 'vuex';
 
 @Options({
-  methods: { 
+  methods: {
+    ...mapGetters({
+      getEditedStatus: 'GET_EDITED_STATUS'
+    }),
+    ...mapActions({
+      dropEditedStatus: 'dropEditedStatus'
+    }),
     exportDB() {
       const database = this.$store.getters.GET_ALL_SUBJECTS;
       this.downloadJSON('database.json', JSON.stringify(database))
+      this.dropEditedStatus()
     },
     downloadJSON(filename: string, text: string) {
       const element = document.createElement('a');
@@ -38,7 +57,7 @@ import { Options, Vue } from 'vue-class-component';
 
       document.body.removeChild(element);
     },
-    test(event: any) {
+    importFromExcel(event: any) {
       let wb;
       const rABS = false
 

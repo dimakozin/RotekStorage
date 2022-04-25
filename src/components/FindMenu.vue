@@ -36,7 +36,8 @@ import {mapGetters, mapActions} from 'vuex'
   },
   computed: {
       ...mapGetters({
-          findByName: 'GET_BY_NAME'
+          findByName: 'GET_BY_NAME',
+          getActiveSections: 'GET_ACTIVE_SECTIONS'
       }),
       showDropdown () {
         let findRes = this.findByName(this.subjectTitle)
@@ -47,6 +48,28 @@ import {mapGetters, mapActions} from 'vuex'
                 item: findRes[0],
                 char: findRes[0][0]
             })
+
+        const activeSection = this.getActiveSections[0]
+        let newRoute = ''
+
+        switch(activeSection){
+          case 1:
+            newRoute = '/first'; break;
+          case 2:
+            newRoute = '/second'; break;
+          case 3:
+            newRoute = '/third'; break;
+          case 4:
+            newRoute = '/fourth'; break;
+          case 5:
+            newRoute = '/fifth'; break;
+          case 6:
+            newRoute = '/sixth'; break;
+        }
+
+        this.$router.push(newRoute)
+
+
             return false
         } 
 

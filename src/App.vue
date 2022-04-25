@@ -13,7 +13,7 @@ import { Options, Vue } from 'vue-class-component';
 import LeftMenu from '@/components/LeftMenu.vue'
 import FindPanel from '@/components/FindPanel.vue';
 import Boxes from '@/components/Boxes.vue';
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 
 @Options({
@@ -22,6 +22,7 @@ import {mapActions} from 'vuex'
   },
   methods: {
     ...mapActions(['dropActiveElement', 'getRemoteStorage']),
+    ...mapGetters(['GET_EDITED_STATUS'])
   },
   mounted () {
     window.addEventListener('keydown', (ev) => {
@@ -29,6 +30,15 @@ import {mapActions} from 'vuex'
     })
 
     this.getRemoteStorage()
+    },
+    created() {
+        window.addEventListener('beforeunload', (event) => {
+        if(this.GET_EDITED_STATUS()){
+          event.preventDefault();
+          event.returnValue = '';
+        }
+      });
+
     }
 })
 

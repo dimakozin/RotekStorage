@@ -35,10 +35,30 @@ import { mapGetters, mapActions } from 'vuex'
       }
     },
     methods:{
-      ...mapGetters(['GET_ALL_UNIQUE_SORTED_BY_NAME', 'GET_ACTIVE_MENU_PARAMS', 'GET_LEFT_MENU_HIDDEN_STATUS']),
+      ...mapGetters(['GET_ALL_UNIQUE_SORTED_BY_NAME', 'GET_ACTIVE_MENU_PARAMS', 'GET_LEFT_MENU_HIDDEN_STATUS', 'GET_ACTIVE_SECTIONS']),
       ...mapActions(['setActiveElement', 'closeLeftMenu']),
       setActive (char:string, item: string) {
         this.setActiveElement({char: char, item:item})
+        const activeSection = this.GET_ACTIVE_SECTIONS()[0]
+        let newRoute = ''
+
+        switch(activeSection){
+          case 1:
+            newRoute = '/first'; break;
+          case 2:
+            newRoute = '/second'; break;
+          case 3:
+            newRoute = '/third'; break;
+          case 4:
+            newRoute = '/fourth'; break;
+          case 5:
+            newRoute = '/fifth'; break;
+          case 6:
+            newRoute = '/sixth'; break;
+        }
+
+        this.$router.push(newRoute)
+
       },
       changeShowProperty(obj: any) {
         if(!this.showedList.includes(obj.char))
