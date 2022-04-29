@@ -3,7 +3,7 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-            <p class="modal-card-title">Секция {{section}} | Ячейка № {{boxId}}</p>
+            <p class="modal-card-title">Стеллаж {{section}} | Ячейка № {{boxId}}</p>
             <button class="delete" aria-label="close" @click="close()"></button>
             </header>
             <section class="modal-card-body">
@@ -21,7 +21,9 @@
                             </th>
                             <th class="amount-th">
                                 <div class="amount">
-                                    {{item.amount}}
+                                    <p v-if="item.amount">
+                                        {{item.amount}}
+                                    </p>
                                 </div>
                                 <button class="button is-small is-primary is-delete-button"
                                 @click="addOne(item)"
@@ -116,8 +118,10 @@ import {mapActions, mapGetters} from 'vuex'
             this.addOne()
         },
         removeOne (item: any) {
-            item.amount--
-            this.removeOne() 
+            if(item.amount != 0){
+                item.amount--
+                this.removeOne() 
+            }
         },
         removeItem (item: any){
             this.deleteElement(item)

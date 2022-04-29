@@ -6,22 +6,22 @@
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
-                >Первая секция</router-link>
+                >Первый стеллаж</router-link>
                 <router-link to="/second"
                     v-bind:class="[ GET_ACTIVE_SECTIONS().includes(2) ? 'is-active-section' : '' ]"
-                >Вторая секция</router-link>
+                >Второй стеллаж</router-link>
                 <router-link to="/third"
                     v-bind:class="[ GET_ACTIVE_SECTIONS().includes(3) ? 'is-active-section' : '' ]"
-                >Третья секция</router-link>
+                >Третий стеллаж</router-link>
                 <router-link to="/fourth"
                     v-bind:class="[ GET_ACTIVE_SECTIONS().includes(4) ? 'is-active-section' : '' ]"
-                >Четвертая секция</router-link>
+                >Четвертый стеллаж</router-link>
                 <router-link to="/fifth"
                     v-bind:class="[ GET_ACTIVE_SECTIONS().includes(5) ? 'is-active-section' : '' ]"
-                >Пятая секция</router-link>
+                >Пятый стеллаж</router-link>
                 <router-link to="/sixth"
                     v-bind:class="[ GET_ACTIVE_SECTIONS().includes(6) ? 'is-active-section' : '' ]"
-                >Шестая секция</router-link>
+                >Шестой стеллаж</router-link>
                 <router-link to="/">Помощь</router-link>
             </ul>
         </div>

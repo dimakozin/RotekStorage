@@ -9,7 +9,12 @@ export default {
             })
         ] as Array<Array<string>>;
 
-        const fileName = `База.xlsx`
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = today.getFullYear();
+        
+        const fileName = `База ${dd + '.' + mm + '.' + yyyy}.xlsx`
 
         const data = XLSX.utils.json_to_sheet(table, {skipHeader: true});
         const wb = XLSX.utils.book_new()

@@ -6,8 +6,9 @@
           Перед началом использования программы необходимо загрузить базу (Excel файл)
         </div>
         <div class="excel-db-import">
-          <button class="button" onclick="document.getElementById('loadFile').click();">
-            Загрузите Excel file
+          <button class="button" onclick="document.getElementById('loadFile').click();"
+          @change="test()">
+            {{fileName}}
             <input type="file" id="loadFile" style="display:none" @change="importFromExcel"/>
           </button>
         </div>
@@ -16,7 +17,10 @@
         </div>
         <div class="help-info">
           Экспорт всей базы осуществляется при переходе во вкладку "Помощь" и клике на кнопку "Экспорт в Excel".
-          При клике на эту кнопку при открытой секции (или открытой ячейке) будет осуществлен экспорт по выбранной секции/ячейке
+          При клике на эту кнопку при открытом стеллаже (или открытой ячейке) будет осуществлен экспорт по выбранному стелажу/ячейке
+        </div>
+        <div class="help-info">
+          После того, как внесены изменения в базу, ее необходимо выгрузить (кнопка "Экспорт в Excel" на вкладе "Помощь")
         </div>
         <h1 class="title scheme-title">
           План размещения и нумерация стеллажей хранения в цехе
@@ -33,6 +37,11 @@ import { Options, Vue } from 'vue-class-component';
 import { mapActions, mapGetters } from 'vuex';
 
 @Options({
+  data() {
+    return {
+      fileName: 'Загрузите Excel файл'
+    }
+  },
   methods: {
     ...mapGetters({
       getEditedStatus: 'GET_EDITED_STATUS'
@@ -40,6 +49,10 @@ import { mapActions, mapGetters } from 'vuex';
     ...mapActions({
       dropEditedStatus: 'dropEditedStatus'
     }),
+    test() {
+      // @ts-ignore
+      this.fileName = document.getElementById('loadFile').files[0].name
+    },
     exportDB() {
       const database = this.$store.getters.GET_ALL_SUBJECTS;
       this.downloadJSON('database.json', JSON.stringify(database))
@@ -108,10 +121,11 @@ import { mapActions, mapGetters } from 'vuex';
             title: item[0],
             section: item[1],
             boxId: item[2],
-            amount: item[3],
+            amount: item[3] ?? 0,
             comment: item[4]
           })
         })
+        this.$store.dispatch("dropEditedStatus")
       } 
 
       if(rABS){
