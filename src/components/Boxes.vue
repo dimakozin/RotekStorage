@@ -3,6 +3,7 @@
         <div class="tabs is-centered">
             <a class="button"
             @click="convertData()">Экспорт в Excel</a>
+            <a class="button" onclick="window.print()">🖨️</a>
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
@@ -29,6 +30,7 @@
             <router-view></router-view>
         </div>
     </section>
+
 </template>
 
 <script lang="ts">
@@ -50,34 +52,27 @@ import {mapActions, mapGetters} from 'vuex'
         this.boxId = boxId
         this.showModal()
       },
-      convertData () {
-            const rack = this.$route.name ?? "all"
-            let data = null
-            switch(rack){
+      getRackData () {
+            switch(this.$route.name ?? "all"){
                 case "firstRack": 
-                    data = this.$store.getters.GET_BY_SECTION(1)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(1)
                 case "secondRack": 
-                    data = this.$store.getters.GET_BY_SECTION(2)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(2)
                 case "thirdRack": 
-                    data = this.$store.getters.GET_BY_SECTION(3)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(3)
                 case "fourthRack": 
-                    data = this.$store.getters.GET_BY_SECTION(4)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(4)
                 case "fifthRack": 
-                    data = this.$store.getters.GET_BY_SECTION(5)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(5)
                 case "sixthRack": 
-                    data = this.$store.getters.GET_BY_SECTION(6)
-                    break;
+                    return this.$store.getters.GET_BY_SECTION(6)
                 default:
-                    data = this.$store.getters.GET_ALL_SUBJECTS
-                    break;
+                    return this.$store.getters.GET_ALL_SUBJECTS
             }
+      },
+      convertData () {
             // @ts-ignore
-            this.$convertToExcel(XLSX, data)
+            this.$convertToExcel(XLSX, this.getRackData())
       }
   },
   components: {BoxModal}
@@ -138,6 +133,20 @@ a.is-active {
 a.is-active-section {
     border: 1px solid red !important;
     color: red !important;
+}
+
+.print-container {
+    visibility: hidden;
+}
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    .print-container {
+        visibility: visible;
+    }
 }
 
 </style>

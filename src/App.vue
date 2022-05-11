@@ -1,4 +1,5 @@
 <template>
+  <print-page></print-page>
   <div class="columns">
     <left-menu></left-menu>    
     <div class="column" style="padding: 0 0 0 0">
@@ -13,12 +14,13 @@ import { Options, Vue } from 'vue-class-component';
 import LeftMenu from '@/components/LeftMenu.vue'
 import FindPanel from '@/components/FindPanel.vue';
 import Boxes from '@/components/Boxes.vue';
+import PrintPage from '@/components/PrintPage.vue';
 import {mapActions, mapGetters} from 'vuex'
 
 
 @Options({
   components: {
-    LeftMenu, FindPanel, Boxes
+    LeftMenu, FindPanel, Boxes, PrintPage
   },
   methods: {
     ...mapActions(['dropActiveElement', 'getRemoteStorage']),
