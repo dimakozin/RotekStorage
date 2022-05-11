@@ -4,7 +4,7 @@
             <a class="button"
             @click="convertData()">Экспорт в Excel</a>
             <a class="button" 
-            @click="prepatePrint()">🖨️</a>
+            @click="preparePrint()">🖨️</a>
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
@@ -76,7 +76,7 @@ import {mapActions, mapGetters} from 'vuex'
         // @ts-ignore
         this.$convertToExcel(XLSX, this.getRackData())
       },
-      async prepatePrint() {
+      async preparePrint() {
         await this.setPrintData([...this.getRackData()])
         window.print()
       }

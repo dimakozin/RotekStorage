@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in this.$store.getters.GET_PRINT_DATA" v-bind:key="item.title">
+                <tr v-for="(item, index) in this.$store.getters.GET_PRINT_DATA" :key="index">
                     <th> {{item.title}} </th>
                     <th> {{item.amount}} </th>
                     <th> {{item.section}} </th>

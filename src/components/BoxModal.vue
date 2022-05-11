@@ -62,8 +62,15 @@
                         >Добавить</a>
                     </div>
                 </div>
+                <h4 class="title is-4">Распечатать ячейку</h4>
+                <div class="excelConvert">
+                    <a class="button"
+                    @click="preparePrint()">
+                        🖨️
+                    </a>
+                </div>
                 <h4 class="title is-4">Сформировать Excel документ</h4>
-                <div class="test">
+                <div class="excelConvert">
                     <a class="button"
                     @click="convertData()">
                         Сформировать
@@ -100,7 +107,8 @@ import {mapActions, mapGetters} from 'vuex'
             addNewSubject: 'addNewSubject',
             deleteElement: 'deleteElement',
             addOne: 'addOne',
-            removeOne: 'removeOne'
+            removeOne: 'removeOne',
+            setPrintData: 'setPrintData'
         }),
         close () {
             this.closeModal()
@@ -130,7 +138,12 @@ import {mapActions, mapGetters} from 'vuex'
             const subjectData = this.$store.getters.GET_BY_BOX_AND_SECTION(this.boxId, this.section)
             // @ts-ignore
             this.$convertToExcel(XLSX, subjectData)
-        }
+        },
+        async preparePrint() {
+            const subjectData = this.$store.getters.GET_BY_BOX_AND_SECTION(this.boxId, this.section)
+            await this.setPrintData(subjectData)
+            window.print()
+      }
     },
     computed: {
         ...mapGetters(['GET_MODAL_STATE', 'GET_BY_BOX_AND_SECTION']),
