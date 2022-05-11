@@ -1,15 +1,31 @@
 <template>
     <section class="print-container">
-        Данные для печати
+        <div class="title">Список товарно-материальных ценностей</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Количество</th>
+                    <th>Стеллаж</th>
+                    <th>Ячейка</th>
+                    <th>Комментарий</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in this.$store.getters.GET_PRINT_DATA" v-bind:key="item.title">
+                    <th> {{item.title}} </th>
+                    <th> {{item.amount}} </th>
+                    <th> {{item.section}} </th>
+                    <th> {{item.boxId}} </th>
+                    <th> {{item.comment}} </th>
+                </tr>
+            </tbody>
+            </table>
     </section>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-
-@Options({
-
-})
+import { Vue } from 'vue-class-component';
 
 export default class PrintPage extends Vue {}
 </script>
@@ -17,6 +33,7 @@ export default class PrintPage extends Vue {}
 <style scoped>
 .print-container {
     visibility: hidden;
+    height: 0px;
 }
 
 @media print {

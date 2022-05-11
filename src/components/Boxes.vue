@@ -3,7 +3,8 @@
         <div class="tabs is-centered">
             <a class="button"
             @click="convertData()">Экспорт в Excel</a>
-            <a class="button" onclick="window.print()">🖨️</a>
+            <a class="button" 
+            @click="prepatePrint()">🖨️</a>
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
@@ -46,8 +47,9 @@ import {mapActions, mapGetters} from 'vuex'
   methods: {
       ...mapActions({
           showModal: 'showModal',
+          setPrintData: 'setPrintData'
       }),
-      ...mapGetters(['GET_ACTIVE_BOXES', 'GET_ACTIVE_SECTIONS']),
+      ...mapGetters(['GET_ACTIVE_BOXES', 'GET_ACTIVE_SECTIONS', 'GET_ALL_SUBJECTS', 'GET_BY_SECTION']),
       showBoxModal (boxId: number) {
         this.boxId = boxId
         this.showModal()
@@ -71,8 +73,12 @@ import {mapActions, mapGetters} from 'vuex'
             }
       },
       convertData () {
-            // @ts-ignore
-            this.$convertToExcel(XLSX, this.getRackData())
+        // @ts-ignore
+        this.$convertToExcel(XLSX, this.getRackData())
+      },
+      async prepatePrint() {
+        await this.setPrintData([...this.getRackData()])
+        window.print()
       }
   },
   components: {BoxModal}

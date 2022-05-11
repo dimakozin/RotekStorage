@@ -20,7 +20,8 @@ export default createStore({
     },
     showModal: false,
     isEdited: false as boolean,
-    subjects: Array<any>()
+    subjects: Array<any>(),
+    printData: Array<any>(),
   },
   mutations: {
     showModal (state) {
@@ -74,6 +75,8 @@ export default createStore({
       // state.subjects = offlineStorage.subjects
     },
     dropEditedStatus: (state) => {state.isEdited = false},
+    setPrintData: (state, data) => {state.printData = data},
+
   },
   actions: {
     showModal: (context) => context.commit('showModal'),
@@ -87,7 +90,8 @@ export default createStore({
     getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload),
     addOne: (context, payload) => context.commit('addOne', payload),
     removeOne: (context, payload) => context.commit('removeOne', payload),
-    dropEditedStatus: (context) => context.commit('dropEditedStatus')
+    dropEditedStatus: (context) => context.commit('dropEditedStatus'),
+    setPrintData: (context, payload) => context.commit('setPrintData', payload)
   },
   modules: {
   },
@@ -169,7 +173,8 @@ export default createStore({
     GET_BY_SECTION: (state) => (section: number) => {
       return state.subjects.filter(subj => subj.section == section)
     },
-    GET_EDITED_STATUS: state => state.isEdited
+    GET_EDITED_STATUS: state => state.isEdited,
+    GET_PRINT_DATA: state => state.printData,
   },
   }
 )
