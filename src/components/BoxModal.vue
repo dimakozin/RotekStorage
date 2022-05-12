@@ -62,18 +62,15 @@
                         >Добавить</a>
                     </div>
                 </div>
-                <h4 class="title is-4">Распечатать ячейку</h4>
-                <div class="excelConvert">
+                <h4 class="title is-4">Дополнительные действия</h4>
+                <div class="extraActions">
                     <a class="button"
                     @click="preparePrint()">
-                        🖨️
+                        🖨️ Печать
                     </a>
-                </div>
-                <h4 class="title is-4">Сформировать Excel документ</h4>
-                <div class="excelConvert">
                     <a class="button"
                     @click="convertData()">
-                        Сформировать
+                        🗎 Сформировать в Excel 
                     </a>
                 </div>
             </footer>
