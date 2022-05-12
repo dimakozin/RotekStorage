@@ -1,15 +1,6 @@
 import { createStore } from 'vuex'
-//import axios from 'axios'
-//import offlineStorage from './offlineStorage'
 
-const GRAPHQLServerURL = 'http://localhost:3000/graphql'
-interface ISubject {
-  id: any,
-  boxId: any,
-  title: any,
-  amount: any,
-  section: any
-}
+import { ipcRenderer } from 'electron'
 
 export default createStore({
   state: {
@@ -72,7 +63,7 @@ export default createStore({
     },
     getRemoteStorage: (state)  => {
       state.subjects = []
-      // state.subjects = offlineStorage.subjects
+      ipcRenderer.send("msg", "he")
     },
     dropEditedStatus: (state) => {state.isEdited = false},
     setPrintData: (state, data) => {state.printData = data},

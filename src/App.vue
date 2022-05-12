@@ -17,7 +17,6 @@ import Boxes from '@/components/Boxes.vue';
 import PrintPage from '@/components/PrintPage.vue';
 import {mapActions, mapGetters} from 'vuex'
 
-
 @Options({
   components: {
     LeftMenu, FindPanel, Boxes, PrintPage
