@@ -96,7 +96,11 @@ export default createStore({
   modules: {
   },
   getters: {
-    GET_ALL_SUBJECTS: state => state.subjects,
+    GET_ALL_SUBJECTS: state => state.subjects.sort( (a, b) => {
+        if(a.title > b.title) return 1
+        if(a.title == b.title) return 0
+        return -1
+    }),
     GET_BY_NAME: (state) => (name: string) => {
       if(!!state.subjects) {
         return state.subjects.filter(subject => subject.title?.toLowerCase()
@@ -171,7 +175,11 @@ export default createStore({
       return result
     },
     GET_BY_SECTION: (state) => (section: number) => {
-      return state.subjects.filter(subj => subj.section == section)
+      return state.subjects.filter(subj => subj.section == section).sort( (a, b) => {
+        if(a.title > b.title) return 1
+        if(a.title == b.title) return 0
+        return -1
+    })
     },
     GET_EDITED_STATUS: state => state.isEdited,
     GET_PRINT_DATA: state => state.printData,
