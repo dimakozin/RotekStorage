@@ -34,7 +34,8 @@ async function createWindow() {
     webPreferences:{
       nodeIntegration: true,
       preload: path.join(__static, 'preload.js'), // <- static
-    }
+    },
+    icon: path.join(__dirname, 'icon.png')
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
