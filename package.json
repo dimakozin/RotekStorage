@@ -1,6 +1,8 @@
 {
   "name": "rotekstorage",
   "version": "0.1.0",
+  "author": "dimakozin",
+  "description": "Rotek storage application",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

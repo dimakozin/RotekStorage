@@ -8,29 +8,30 @@ import path from 'path'
  
 import fs from 'fs'
 
+const dbpath = path.join(process.resourcesPath, 'db.json')
+
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
 ipcMain.on("getDB", (event) => {
-  const filepath = path.join(__dirname, 'db.json')
-  if(fs.existsSync(filepath)){
-    const file = fs.readFileSync(`${__dirname}/db.json`, {encoding: 'utf8'})
+  if(fs.existsSync(dbpath)){
+    const file = fs.readFileSync(dbpath, {encoding: 'utf8'})
     const subjects = JSON.parse(file)  
     event.returnValue = {
       subjects: subjects
     }
   } else {
     event.returnValue = {
-      error: "Нет файла базы данных db.json. Откроется пустой склад",
+      error: "Нет файла базы данных db.json. Откроется пустой склад. " + dbpath,
       subjects: []
     }
   }
 })
 
 ipcMain.on("saveDatabase", (event, data) => {
-  fs.writeFile(`${__dirname}/db.json`, data, () => {})
+  fs.writeFile(dbpath, data, {flag: 'w+'}, (err) => {console.error(err)})
 })
 
 async function createWindow() {
