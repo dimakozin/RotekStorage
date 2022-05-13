@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
-import { ipcRenderer } from 'electron'
+//@ts-ignore
+const DB = window.electronAPI.getDB()
 
 export default createStore({
   state: {
@@ -15,6 +16,9 @@ export default createStore({
     printData: Array<any>(),
   },
   mutations: {
+    dropDatabase (state) {
+      state.subjects = []
+    },
     showModal (state) {
       state.showModal = true
     },
@@ -62,14 +66,15 @@ export default createStore({
       state.isEdited = true
     },
     getRemoteStorage: (state)  => {
-      state.subjects = []
-      ipcRenderer.send("msg", "he")
+      state.subjects = DB.subjects
+      console.log(DB)
     },
     dropEditedStatus: (state) => {state.isEdited = false},
     setPrintData: (state, data) => {state.printData = data},
 
   },
   actions: {
+    dropDatabase: (context) => context.commit('dropDatabase'),
     showModal: (context) => context.commit('showModal'),
     closeModal: (context) => context.commit('closeModal'),
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),

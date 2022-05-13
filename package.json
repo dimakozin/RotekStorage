@@ -14,18 +14,15 @@
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "axios": "^0.25.0",
-    "buefy": "^0.9.14",
     "bulma": "^0.9.3",
     "commonjs-variables-for-esmodules": "^1.1.0",
     "core-js": "^3.6.5",
     "fs": "^0.0.1-security",
-    "js-xlsx": "^0.8.22",
     "path": "^0.12.7",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0",
-    "xlsx": "^0.18.5"
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
     "@types/electron-devtools-installer": "^2.2.0",

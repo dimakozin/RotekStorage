@@ -4,16 +4,22 @@ import { app, protocol, BrowserWindow, ipcMain } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
-
-import commonjsVariables from 'commonjs-variables-for-esmodules';
+import path from 'path'
  
+import fs from 'fs'
+
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
-ipcMain.on("msg", (event, data) => {
-  console.log(data)
+ipcMain.on("getDB", (event) => {
+  const file = fs.readFileSync(`${__dirname}/db.json`, {encoding: 'utf8'})
+  const subjects = JSON.parse(file)
+
+  event.returnValue = {
+    subjects: subjects
+  }
 })
 
 async function createWindow() {
@@ -22,7 +28,8 @@ async function createWindow() {
     width: 1920,
     height: 1080,
     webPreferences:{
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.join(__static, 'preload.js'), // <- static
     }
   })
 
