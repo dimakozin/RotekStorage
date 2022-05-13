@@ -1,15 +1,10 @@
 import { createStore } from 'vuex'
-//import axios from 'axios'
-//import offlineStorage from './offlineStorage'
 
-const GRAPHQLServerURL = 'http://localhost:3000/graphql'
-interface ISubject {
-  id: any,
-  boxId: any,
-  title: any,
-  amount: any,
-  section: any
-}
+//@ts-ignore
+const DB = window.electronAPI.getDB()
+
+//@ts-ignore
+const saveDatabase = window.electronAPI.saveDatabase
 
 export default createStore({
   state: {
@@ -24,6 +19,9 @@ export default createStore({
     printData: Array<any>(),
   },
   mutations: {
+    dropDatabase (state) {
+      state.subjects = []
+    },
     showModal (state) {
       state.showModal = true
     },
@@ -50,13 +48,21 @@ export default createStore({
         })
         state.isEdited = true
     },
-    addOne (state, id) {
-        // TODO
+    addOne (state, item) {
+      state.subjects.find(el => 
+        el.title == item.title &&
+        el.section == item.section &&
+        el.boxId == item.boxId
+        ).amount++  
         state.isEdited = true
     },
-    removeOne (state, id) {
-        // TODO
-        state.isEdited = true
+    removeOne (state, item) {
+      state.subjects.find(el => 
+        el.title == item.title &&
+        el.section == item.section &&
+        el.boxId == item.boxId
+        ).amount--  
+      state.isEdited = true
     },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
@@ -71,25 +77,43 @@ export default createStore({
       state.isEdited = true
     },
     getRemoteStorage: (state)  => {
-      state.subjects = []
-      // state.subjects = offlineStorage.subjects
+      if('error' in DB){
+        alert(DB.error)
+      } else {
+        state.subjects = DB.subjects
+      }
     },
     dropEditedStatus: (state) => {state.isEdited = false},
     setPrintData: (state, data) => {state.printData = data},
-
+    saveDatabase: (state) => {
+      saveDatabase(JSON.stringify(state.subjects))
+    }
   },
   actions: {
+    dropDatabase: (context) => context.commit('dropDatabase'),
     showModal: (context) => context.commit('showModal'),
     closeModal: (context) => context.commit('closeModal'),
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
     showLeftMenu: (context) => context.commit('showLeftMenu'),
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
-    addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
+    addNewSubject: (context, payload) => {
+      context.commit('addNewSubject', payload)
+      context.commit('saveDatabase')
+    },
     dropActiveElement: (context) => context.commit('dropActiveElement'),
-    deleteElement: (context, payload) => context.commit('deleteElement', payload),
+    deleteElement: (context, payload) => {
+      context.commit('deleteElement', payload)
+      context.commit('saveDatabase')
+    },
     getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload),
-    addOne: (context, payload) => context.commit('addOne', payload),
-    removeOne: (context, payload) => context.commit('removeOne', payload),
+    addOne: (context, payload) => {
+      context.commit('addOne', payload)
+      context.commit('saveDatabase')
+    },
+    removeOne: (context, payload) => {
+      context.commit('removeOne', payload)
+      context.commit('saveDatabase')
+    },
     dropEditedStatus: (context) => context.commit('dropEditedStatus'),
     setPrintData: (context, payload) => context.commit('setPrintData', payload)
   },

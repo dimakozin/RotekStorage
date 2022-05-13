@@ -7,4 +7,5 @@ import utils from './utils'
 
 const app = createApp(App)
 app.config.globalProperties.$convertToExcel = utils.convertToExcel
+app.config.globalProperties.$getCurrentDate = utils.getCurrentDate
 app.use(store).use(router).mount('#app')

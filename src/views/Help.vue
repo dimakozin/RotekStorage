@@ -6,8 +6,8 @@
           Перед началом использования программы необходимо загрузить базу (Excel файл)
         </div>
         <div class="excel-db-import">
-          <button class="button" onclick="document.getElementById('loadFile').click();"
-          @change="test()">
+          <button class="button is-link" onclick="document.getElementById('loadFile').click();"
+          @change="changeFilename()">
             {{fileName}}
             <input type="file" id="loadFile" style="display:none" @change="importFromExcel"/>
           </button>
@@ -27,6 +27,9 @@
         </h1>
         <div class="scheme-image">
           <img src="/img/Scheme.png">
+        </div>
+        <div class="exportToJSON">
+          <button class="button is-link" @click="exportDB()">Резервное копирование</button>
         </div>
       </div>
   </div>
@@ -49,13 +52,13 @@ import { mapActions, mapGetters } from 'vuex';
     ...mapActions({
       dropEditedStatus: 'dropEditedStatus'
     }),
-    test() {
+    changeFilename() {
       // @ts-ignore
       this.fileName = document.getElementById('loadFile').files[0].name
     },
     exportDB() {
       const database = this.$store.getters.GET_ALL_SUBJECTS;
-      this.downloadJSON('database.json', JSON.stringify(database))
+      this.downloadJSON(`db ${this.$getCurrentDate()}.json`, JSON.stringify(database))
       this.dropEditedStatus()
     },
     downloadJSON(filename: string, text: string) {
@@ -115,6 +118,7 @@ import { mapActions, mapGetters } from 'vuex';
         }
         d.shift()
 
+        this.$store.dispatch('dropDatabase')
 
         d.forEach(item => {
           this.$store.dispatch("addNewSubject", {
