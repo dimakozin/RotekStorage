@@ -31,15 +31,6 @@ import {mapActions, mapGetters} from 'vuex'
     })
 
     this.getRemoteStorage()
-    },
-    created() {
-        window.addEventListener('beforeunload', (event) => {
-        if(this.GET_EDITED_STATUS()){
-          event.preventDefault();
-          event.returnValue = '';
-        }
-      });
-
     }
 })
 

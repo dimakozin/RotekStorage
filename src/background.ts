@@ -22,6 +22,10 @@ ipcMain.on("getDB", (event) => {
   }
 })
 
+ipcMain.on("saveDatabase", (event, data) => {
+  fs.writeFile(`${__dirname}/db.json`, data, () => {})
+})
+
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
@@ -51,6 +55,10 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
+})
+
+app.on('quit', () => {
+  app.quit()
 })
 
 app.on('activate', () => {

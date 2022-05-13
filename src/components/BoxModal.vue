@@ -103,8 +103,8 @@ import {mapActions, mapGetters} from 'vuex'
             closeModal: 'closeModal',
             addNewSubject: 'addNewSubject',
             deleteElement: 'deleteElement',
-            addOne: 'addOne',
-            removeOne: 'removeOne',
+            addOneItem: 'addOne',
+            removeOneItem: 'removeOne',
             setPrintData: 'setPrintData'
         }),
         close () {
@@ -119,13 +119,11 @@ import {mapActions, mapGetters} from 'vuex'
             })
         },
         addOne (item: any) {
-            item.amount++
-            this.addOne()
+            this.addOneItem(item)
         },
         removeOne (item: any) {
             if(item.amount != 0){
-                item.amount--
-                this.removeOne() 
+                this.removeOneItem(item) 
             }
         },
         removeItem (item: any){

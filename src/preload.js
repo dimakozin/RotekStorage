@@ -1,5 +1,6 @@
-import { contextBridge, ipcRenderer } from 'electron'
+const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('electronAPI', {
-    msg: (title) => ipcRenderer.send('msg', title)
+    getDB: () => ipcRenderer.sendSync('getDB'),
+    saveDatabase: (subjects) => ipcRenderer.send('saveDatabase', subjects)
 })

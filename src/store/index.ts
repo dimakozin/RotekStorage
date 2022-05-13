@@ -3,6 +3,9 @@ import { createStore } from 'vuex'
 //@ts-ignore
 const DB = window.electronAPI.getDB()
 
+//@ts-ignore
+const saveDatabase = window.electronAPI.saveDatabase
+
 export default createStore({
   state: {
     leftMenu: {
@@ -45,13 +48,21 @@ export default createStore({
         })
         state.isEdited = true
     },
-    addOne (state, id) {
-        // TODO
+    addOne (state, item) {
+      state.subjects.find(el => 
+        el.title == item.title &&
+        el.section == item.section &&
+        el.boxId == item.boxId
+        ).amount++  
         state.isEdited = true
     },
-    removeOne (state, id) {
-        // TODO
-        state.isEdited = true
+    removeOne (state, item) {
+      state.subjects.find(el => 
+        el.title == item.title &&
+        el.section == item.section &&
+        el.boxId == item.boxId
+        ).amount--  
+      state.isEdited = true
     },
     dropActiveElement(state){
       state.leftMenu.activeChar = null
@@ -67,11 +78,12 @@ export default createStore({
     },
     getRemoteStorage: (state)  => {
       state.subjects = DB.subjects
-      console.log(DB)
     },
     dropEditedStatus: (state) => {state.isEdited = false},
     setPrintData: (state, data) => {state.printData = data},
-
+    saveDatabase: (state) => {
+      saveDatabase(JSON.stringify(state.subjects))
+    }
   },
   actions: {
     dropDatabase: (context) => context.commit('dropDatabase'),
@@ -80,12 +92,24 @@ export default createStore({
     setActiveElement: (context, payload) => context.commit('setActiveElement', payload),
     showLeftMenu: (context) => context.commit('showLeftMenu'),
     closeLeftMenu: (context) => context.commit('closeLeftMenu'),
-    addNewSubject: (context, payload) => context.commit('addNewSubject', payload),
+    addNewSubject: (context, payload) => {
+      context.commit('addNewSubject', payload)
+      context.commit('saveDatabase')
+    },
     dropActiveElement: (context) => context.commit('dropActiveElement'),
-    deleteElement: (context, payload) => context.commit('deleteElement', payload),
+    deleteElement: (context, payload) => {
+      context.commit('deleteElement', payload)
+      context.commit('saveDatabase')
+    },
     getRemoteStorage: (context, payload) => context.commit('getRemoteStorage', payload),
-    addOne: (context, payload) => context.commit('addOne', payload),
-    removeOne: (context, payload) => context.commit('removeOne', payload),
+    addOne: (context, payload) => {
+      context.commit('addOne', payload)
+      context.commit('saveDatabase')
+    },
+    removeOne: (context, payload) => {
+      context.commit('removeOne', payload)
+      context.commit('saveDatabase')
+    },
     dropEditedStatus: (context) => context.commit('dropEditedStatus'),
     setPrintData: (context, payload) => context.commit('setPrintData', payload)
   },
