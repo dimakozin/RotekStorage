@@ -14,11 +14,18 @@ protocol.registerSchemesAsPrivileged([
 ])
 
 ipcMain.on("getDB", (event) => {
-  const file = fs.readFileSync(`${__dirname}/db.json`, {encoding: 'utf8'})
-  const subjects = JSON.parse(file)
-
-  event.returnValue = {
-    subjects: subjects
+  const filepath = path.join(__dirname, 'db.json')
+  if(fs.existsSync(filepath)){
+    const file = fs.readFileSync(`${__dirname}/db.json`, {encoding: 'utf8'})
+    const subjects = JSON.parse(file)  
+    event.returnValue = {
+      subjects: subjects
+    }
+  } else {
+    event.returnValue = {
+      error: "Нет файла базы данных db.json. Откроется пустой склад",
+      subjects: []
+    }
   }
 })
 

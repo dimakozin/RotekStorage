@@ -77,7 +77,11 @@ export default createStore({
       state.isEdited = true
     },
     getRemoteStorage: (state)  => {
-      state.subjects = DB.subjects
+      if('error' in DB){
+        alert(DB.error)
+      } else {
+        state.subjects = DB.subjects
+      }
     },
     dropEditedStatus: (state) => {state.isEdited = false},
     setPrintData: (state, data) => {state.printData = data},
