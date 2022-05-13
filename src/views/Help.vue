@@ -58,7 +58,7 @@ import { mapActions, mapGetters } from 'vuex';
     },
     exportDB() {
       const database = this.$store.getters.GET_ALL_SUBJECTS;
-      this.downloadJSON('db.json', JSON.stringify(database))
+      this.downloadJSON(`db ${this.$getCurrentDate()}.json`, JSON.stringify(database))
       this.dropEditedStatus()
     },
     downloadJSON(filename: string, text: string) {
