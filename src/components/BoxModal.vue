@@ -117,6 +117,7 @@ import {mapActions, mapGetters} from 'vuex'
                 section: this.section,
                 amount: 1
             })
+            this.newSubjectTitle = ""
         },
         addOne (item: any) {
             this.addOneItem(item)
