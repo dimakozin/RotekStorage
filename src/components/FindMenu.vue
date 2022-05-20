@@ -5,13 +5,13 @@
                 <div class="field">
                     <p class="control is-expanded has-icons-right">
                         <input class="input" type="search" 
-                        @input="checkIfEscape"
+                        @input="checkInput"
                         v-model="subjectTitle" placeholder="Введите объект поиска"/>
                     </p>
                 </div>
             </div>
             <div class="dropdown-menu" id="dropdown-menu" role="menu" 
-            v-if="showDropdown" >
+            v-if="isShowDropdown" >
                 <div class="dropdown-content">
                     <a class="dropdown-item" v-for="title in findByName(subjectTitle)"
                      @click="setTitle(title)"
@@ -42,6 +42,7 @@ import {mapGetters, mapActions} from 'vuex'
   data () { 
     return {
         subjectTitle: "",
+        isShowDropdown: false
     }
   },
   computed: {
@@ -49,54 +50,34 @@ import {mapGetters, mapActions} from 'vuex'
           findByName: 'GET_BY_NAME',
           getActiveSections: 'GET_ACTIVE_SECTIONS'
       }),
-      showDropdown () {
-        if(this.subjectTitle == '') return false
-
-        const findRes = this.findByName(this.subjectTitle)
-        
-        if(findRes.length === 0) return false
-        if(findRes.length === 1 & findRes[0].toLowerCase() == this.subjectTitle.toLowerCase()) {
-            this.setActiveElement({
-                item: findRes[0],
-                char: findRes[0][0]
-            })
-
-        const activeSection = this.getActiveSections[0]
-        let newRoute = ''
-
-        switch(activeSection){
-          case 1:
-            newRoute = '/first'; break;
-          case 2:
-            newRoute = '/second'; break;
-          case 3:
-            newRoute = '/third'; break;
-          case 4:
-            newRoute = '/fourth'; break;
-          case 5:
-            newRoute = '/fifth'; break;
-          case 6:
-            newRoute = '/sixth'; break;
-        }
-
-        this.$router.push(newRoute)
-
-
-            return false
-        } 
-
-        return true
-      }
    },
    methods: {
        ...mapActions(['setActiveElement', 'dropActiveElement']),
        setTitle (title ) {
            this.subjectTitle = title
+           this.isShowDropdown = false
+            this.setActiveElement({
+                item: title,
+                char: title[0]
+            })
        },
-       checkIfEscape(ev) {
-         if(ev instanceof Event && !(ev  instanceof InputEvent)){
-           this.dropActiveElement()
-         }
+       checkInput(ev) {
+        if(ev instanceof Event && !(ev  instanceof InputEvent)){
+          this.dropActiveElement()
+          this.isShowDropdown = false
+          console.log('here')
+          return
+        }
+        
+         if(!this.subjectTitle){
+          this.isShowDropdown = false
+          return
+        } else {
+          const findRes = this.findByName(this.subjectTitle)
+          this.isShowDropdown = true
+          if(findRes.length === 0) this.isShowDropdown = false
+        }
+
        }
    },
 })
