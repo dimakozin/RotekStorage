@@ -1,10 +1,9 @@
 <template>
     <section class="racks">
         <div class="tabs is-centered">
-            <a class="button"
-            @click="convertData()">Экспорт в Excel</a>
             <a class="button" 
-            @click="preparePrint()">🖨️</a>
+            @click="preparePrint()">🖨️
+            </a>
             <ul>
                 <router-link to="/first"
                 v-bind:class="[ GET_ACTIVE_SECTIONS().includes(1) ? 'is-active-section' : '' ]"
@@ -29,6 +28,11 @@
         </div>
         <div class="rack-view">
             <router-view></router-view>
+        </div>
+        <div class="export">
+            <a class="button"
+                @click="convertData()">Экспорт
+            </a>
         </div>
     </section>
 
@@ -91,6 +95,11 @@ export default class Boxes extends Vue {
 </script>
 
 <style lang="css">
+
+.export{
+    padding-top: 10px;
+    text-align: center;
+}
 
 .racks{
     padding-top: 25px;

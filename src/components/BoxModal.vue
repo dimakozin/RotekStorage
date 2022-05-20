@@ -70,7 +70,7 @@
                     </a>
                     <a class="button"
                     @click="convertData()">
-                        🗎 Сформировать в Excel 
+                        🗎 Экспорт 
                     </a>
                 </div>
             </footer>

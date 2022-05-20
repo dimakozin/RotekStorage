@@ -1,6 +1,13 @@
 <template>
   <div class="columns">
       <div class="column scheme">
+        <h1 class="title scheme-title">
+          План размещения и нумерация стеллажей хранения в цехе
+        </h1>
+        <div class="scheme-image">
+          <img src="/img/Scheme.png">
+        </div>
+
         <h1 class="title">Информация по пользованию программой</h1>
         <div class="help-info">
           Перед началом использования программы необходимо загрузить базу (Excel файл)
@@ -20,13 +27,7 @@
           При клике на эту кнопку при открытом стеллаже (или открытой ячейке) будет осуществлен экспорт по выбранному стелажу/ячейке
         </div>
         <div class="help-info">
-          После того, как внесены изменения в базу, ее необходимо выгрузить (кнопка "Экспорт в Excel" на вкладе "Помощь")
-        </div>
-        <h1 class="title scheme-title">
-          План размещения и нумерация стеллажей хранения в цехе
-        </h1>
-        <div class="scheme-image">
-          <img src="/img/Scheme.png">
+          После того, как внесены изменения в базу, ее необходимо выгрузить (кнопка "Экспорт" на вкладе "Помощь")
         </div>
         <div class="exportToJSON">
           <button class="button is-link" @click="exportDB()">Резервное копирование</button>
