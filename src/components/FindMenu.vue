@@ -5,7 +5,7 @@
                 <div class="field">
                     <p class="control is-expanded has-icons-right">
                         <input class="input" type="search" 
-                        @input="test"
+                        @input="checkIfEscape"
                         v-model="subjectTitle" placeholder="Введите объект поиска"/>
                     </p>
                 </div>
@@ -93,7 +93,7 @@ import {mapGetters, mapActions} from 'vuex'
        setTitle (title ) {
            this.subjectTitle = title
        },
-       test(ev) {
+       checkIfEscape(ev) {
          if(ev instanceof Event && !(ev  instanceof InputEvent)){
            this.dropActiveElement()
          }
