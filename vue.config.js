@@ -13,7 +13,8 @@ module.exports = {
           allowElevation: false,
           allowToChangeInstallationDirectory: true,
           oneClick: false,
-          perMachine: true
+          perMachine: true,
+          include: "dist_electron/installer.nsh"
         }
       }
     }
