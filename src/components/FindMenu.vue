@@ -4,7 +4,9 @@
             <div class="dropdown-trigger">
                 <div class="field">
                     <p class="control is-expanded has-icons-right">
-                        <input class="input" type="search" v-model="subjectTitle" placeholder="Введите объект поиска"/>
+                        <input class="input" type="search" 
+                        @input="test"
+                        v-model="subjectTitle" placeholder="Введите объект поиска"/>
                     </p>
                 </div>
             </div>
@@ -29,6 +31,14 @@ import {mapGetters, mapActions} from 'vuex'
   props: {
     
   },
+  mounted () {
+    window.addEventListener('keydown', (ev) => {
+      if(ev.key == 'Escape'){
+        this.subjectTitle = ''
+        this.dropActiveElement()
+      }
+    })
+  },
   data () { 
     return {
         subjectTitle: "",
@@ -40,8 +50,10 @@ import {mapGetters, mapActions} from 'vuex'
           getActiveSections: 'GET_ACTIVE_SECTIONS'
       }),
       showDropdown () {
-        let findRes = this.findByName(this.subjectTitle)
         if(this.subjectTitle == '') return false
+
+        const findRes = this.findByName(this.subjectTitle)
+        
         if(findRes.length === 0) return false
         if(findRes.length === 1 & findRes[0].toLowerCase() == this.subjectTitle.toLowerCase()) {
             this.setActiveElement({
@@ -77,9 +89,14 @@ import {mapGetters, mapActions} from 'vuex'
       }
    },
    methods: {
-       ...mapActions(['setActiveElement']),
+       ...mapActions(['setActiveElement', 'dropActiveElement']),
        setTitle (title ) {
            this.subjectTitle = title
+       },
+       test(ev) {
+         if(ev instanceof Event && !(ev  instanceof InputEvent)){
+           this.dropActiveElement()
+         }
        }
    },
 })

@@ -26,10 +26,6 @@ import {mapActions, mapGetters} from 'vuex'
     ...mapGetters(['GET_EDITED_STATUS'])
   },
   mounted () {
-    window.addEventListener('keydown', (ev) => {
-      this.dropActiveElement()
-    })
-
     this.getRemoteStorage()
     }
 })
