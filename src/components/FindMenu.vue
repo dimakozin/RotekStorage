@@ -4,7 +4,7 @@
             <div class="dropdown-trigger">
                 <div class="field">
                     <p class="control is-expanded has-icons-right">
-                        <input class="input" type="search" 
+                        <input class="input custom-input" type="search"
                         @input="checkInput"
                         v-model="subjectTitle" placeholder="Введите объект поиска"/>
                     </p>
@@ -86,3 +86,11 @@ export default class FindMenu extends Vue {
   
 }
 </script>
+
+<style>
+
+.custom-input{
+  border: 3px solid #485fc7 !important; 
+}
+
+</style>

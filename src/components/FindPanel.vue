@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-link">
+  <section class="hero custom-hero">
     <div class="hero-body">
       <div class="left-panel">
         <img class="logo first-logo" src="/img/logos/red_logo1.png">
@@ -10,7 +10,7 @@
           @click="showLeftMenu()"
           >Показать алфавитный список</button>
         </div>
-        <p class="title">
+        <p class="title custom-title">
           Расположение товарно-материальных ценностей
         </p>
         <p class="title">
@@ -44,8 +44,17 @@ export default class FindPanel extends Vue {
 
 <style lang="css">
 
+.custom-hero{
+  border: 12px solid #485fc7;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: radial-gradient(white, #485fc7);
+}
+
 .hero-body{
   display: flex;
+  padding-left: 2% !important;
+  padding-right: 3% !important  
 }
 
 .left-panel{
@@ -58,7 +67,7 @@ export default class FindPanel extends Vue {
 }
 
 .right-panel{
-  padding-left: 2%
+  padding-left: 3%
 }
 
 .logo{
@@ -76,5 +85,9 @@ export default class FindPanel extends Vue {
 
 .dropdown-block{
     display: block !important;
+}
+
+.custom-title {
+  text-align: center;
 }
 </style>

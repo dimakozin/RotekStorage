@@ -31,7 +31,7 @@
         </div>
         <div class="export">
             <a class="button"
-                @click="convertData()">Экспорт
+                @click="convertData()">Экспорт базы данных
             </a>
         </div>
     </section>
